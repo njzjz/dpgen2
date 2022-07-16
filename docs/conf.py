@@ -79,6 +79,8 @@ def setup(app):
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/", None),
+    "numpy": ("https://docs.scipy.org/doc/numpy/", None),
     "dargs": ("https://docs.deepmodeling.com/projects/dargs/en/latest/", None),
     "dflow": ("https://deepmodeling.com/dflow/", None),
+    "dpdata": ("https://docs.deepmodeling.com/projects/dpdata/en/latest/", None),
 }
