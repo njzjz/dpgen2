@@ -2,6 +2,7 @@ import numpy as np
 import dpdata
 from pathlib import Path
 from typing import (
+    Optional,
     Tuple, 
     List, 
     Set, 
@@ -14,8 +15,8 @@ class VaspInputs():
             self,
             kspacing : Union[float, List[float]],
             kgamma : bool = True,
-            incar_template_name : str = None,
-            potcar_names : Dict[str, str] = None,
+            incar_template_name : Optional[str]= None,
+            potcar_names : Optional[Dict[str, str]] = None,
     ):
         """
         Parameters
@@ -37,7 +38,10 @@ class VaspInputs():
         """
         self.kspacing = kspacing
         self.kgamma = kgamma
+        # TODO: not acctually optional
+        assert incar_template_name is not None
         self.incar_from_file(incar_template_name)
+        assert potcar_names is not None
         self.potcars_from_file(potcar_names)
 
     @property
@@ -73,7 +77,7 @@ class VaspInputs():
 
     def make_kpoints(
             self,
-            box : np.array,
+            box : np.ndarray,
     ) -> str:
         return make_kspacing_kpoints(box, self.kspacing, self.kgamma)
 
