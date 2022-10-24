@@ -14,9 +14,9 @@ class VaspInputs():
     def __init__(
             self,
             kspacing : Union[float, List[float]],
+            incar_template_name : str,
+            potcar_names : Dict[str, str],
             kgamma : bool = True,
-            incar_template_name : Optional[str]= None,
-            potcar_names : Optional[Dict[str, str]] = None,
     ):
         """
         Parameters
@@ -38,10 +38,7 @@ class VaspInputs():
         """
         self.kspacing = kspacing
         self.kgamma = kgamma
-        # TODO: not acctually optional
-        assert incar_template_name is not None
         self.incar_from_file(incar_template_name)
-        assert potcar_names is not None
         self.potcars_from_file(potcar_names)
 
     @property
