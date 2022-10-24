@@ -110,7 +110,7 @@ class TestPrepVaspTaskGroup(unittest.TestCase):
         vasp_inputs = VaspInputs(
                 0.16,
                 self.incar,
-                {'foo': self.potcar}
+                {'foo': self.potcar},
                 True,
             )
         out = op.execute( OPIO({
