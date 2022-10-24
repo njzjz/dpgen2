@@ -25,8 +25,6 @@ class VaspInputs():
                 The kspacing. If it is a number, then three directions use the same
                 ksapcing, otherwise it is a list of three numbers, specifying the
                 kspacing used in the x, y and z dimension.
-        kgamma : bool
-                K-mesh includes the gamma point
         incar_template_name: str
                 A template INCAR file. 
         potcar_names : Dict[str,str]
@@ -35,6 +33,8 @@ class VaspInputs():
                    "H" : "/path/to/POTCAR_H",
                    "O" : "/path/to/POTCAR_O",
                 }
+        kgamma : bool
+                K-mesh includes the gamma point
         """
         self.kspacing = kspacing
         self.kgamma = kgamma
