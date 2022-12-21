@@ -107,7 +107,7 @@ class RunGaussian(RunFp):
     def run_task(
             self,
             command : str,
-            out: str,
+            out_name: str,
     ) -> Tuple[str, str]:
         r"""Defines how one FP task runs
         
@@ -115,7 +115,7 @@ class RunGaussian(RunFp):
         ----------
         command: str
             The command of running gaussian task
-        out: str
+        out_name: str
             The name of the output data file.
 
         Returns
@@ -136,8 +136,8 @@ class RunGaussian(RunFp):
             )                    
         # convert the output to deepmd/npy format
         sys = dpdata.LabeledSystem(gaussian_output_name, fmt='gaussian/log')
-        sys.to('deepmd/npy', out)
-        return out, gaussian_output_name
+        sys.to('deepmd/npy', out_name)
+        return out_name, gaussian_output_name
 
 
     @staticmethod
