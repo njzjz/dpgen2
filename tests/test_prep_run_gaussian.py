@@ -15,7 +15,7 @@ class TestPrepGaussian(unittest.TestCase):
     def test_prep_gaussian(self):
         inputs = GaussianInputs(
             keywords="force b3lyp/6-31g*",
-            multicity=1,
+            multiplicity=1,
         )
         ta = GaussianInputs.args()
         base = Argument("base", dict, ta)
@@ -54,7 +54,7 @@ class TestRunGaussian(unittest.TestCase):
         }).to_gaussian_gjf(
             gaussian_input_name,
             keywords="force b3lyp/6-31g*",
-            multicity=1
+            multiplicity=1
         )
         run_gaussian = RunGaussian()
         output = 'mock_output'
