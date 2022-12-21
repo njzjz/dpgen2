@@ -6,6 +6,8 @@ from dpgen2.fp.gaussian import (
     PrepGaussian,
     RunGaussian,
     dpdata,
+    gaussian_input_name,
+    gaussian_output_name,
 )
 from dargs import Argument
 
@@ -13,6 +15,7 @@ class TestPrepGaussian(unittest.TestCase):
     def test_prep_gaussian(self):
         inputs = GaussianInputs(
             keywords="force b3lyp/6-31g*",
+            multicity=1,
         )
         ta = GaussianInputs.args()
         base = Argument("base", dict, ta)
@@ -38,6 +41,21 @@ class TestPrepGaussian(unittest.TestCase):
 
 class TestRunGaussian(unittest.TestCase):
     def test_run_gaussian(self):
+        dpdata.LabeledSystem(data={
+            'atom_names': ['H'],
+            'atom_numbs': [1],
+            'atom_types': np.zeros(1, dtype=int),
+            'cells': np.eye(3).reshape(1, 3, 3),
+            'coords': np.zeros((1, 1, 3)),
+            'energies': np.zeros(1),
+            'forces': np.zeros((1, 1, 3)),
+            'orig': np.zeros(3),
+            'nopbc': True,
+        }).to_gaussian_gjf(
+            gaussian_input_name,
+            keywords="force b3lyp/6-31g*",
+            multicity=1
+        )
         run_gaussian = RunGaussian()
         output = 'mock_output'
         out_name, log_name = run_gaussian.run_task(
@@ -45,4 +63,4 @@ class TestRunGaussian(unittest.TestCase):
             output,
         )
         assert out_name == output
-        assert log_name == 'task.log'
+        assert log_name == gaussian_output_name
