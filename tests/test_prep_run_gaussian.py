@@ -1,5 +1,6 @@
 import numpy as np
 import unittest
+from pathlib import Path
 
 from dpgen2.fp.gaussian import (
     GaussianInputs,
@@ -37,6 +38,7 @@ class TestPrepGaussian(unittest.TestCase):
             conf_frame=system,
             inputs=inputs,
         )
+        assert Path(gaussian_input_name).exists()
 
 
 class TestRunGaussian(unittest.TestCase):
