@@ -174,6 +174,4 @@ def make_lmp_input(
     ret += "\n"
     ret += "timestep        %f\n" % dt
     ret += "run             ${NSTEPS} upto\n"
-    # remove trailing whitespaces
-    ret = "\n".join([line.rstrip() for line in ret.splitlines()])
     return ret
