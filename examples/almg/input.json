@@ -120,7 +120,7 @@
 	"f_trust_lo":		0.05,
 	"f_trust_hi":		0.50,
 	"output_nopbc":		false,
-	"configuration_prefix": null, 
+	"configuration_prefix": null,
 	"configurations":	[
 	    {
 		"type": "alloy",
@@ -130,8 +130,8 @@
 		"concentration" : [[1.0, 0.0], [0.5, 0.5], [0.0, 1.0]]
 	    }
 	],
-	"_comment" : "Stage is of type List[List[dict]]. "
-	"_comment" : "The outer list gives stages, the inner list gives the task groups of the stage, and dict describes the task group."
+	"_comment" : "Stage is of type List[List[dict]]. ",
+	"_comment" : "The outer list gives stages, the inner list gives the task groups of the stage, and dict describes the task group.",
 	"stages":	[
 	    [
 		{
@@ -143,7 +143,7 @@
 		    "type" : "lmp-template",
 		    "lmp" : "template.lammps", "trj_freq" : 10, "revisions" : {"V_NSTEPS" : [40], "V_TEMP" : [100, 200]},
 		    "conf_idx": [0], "n_sample" : 3
-		}		
+		}
 	    ]
 	],
 	"_comment" : "all"
@@ -163,4 +163,3 @@
 	"_comment" : "all"
     }
 }
-

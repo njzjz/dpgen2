@@ -13,86 +13,138 @@ from dpgen2.utils import (
 )
 from dpgen2.op import RunDPTrain
 
+
 class TestArgs(unittest.TestCase):
     def test(self):
         old_data = json.loads(old_str)
         new_data = normalize(json.loads(new_str))
-        default_config = normalize_step_dict(old_data.get('default_config', {}))
+        default_config = normalize_step_dict(old_data.get("default_config", {}))
         self.assertEqual(
-            new_data['dflow_config'], 
+            new_data["dflow_config"],
             {
                 "host": "http://address.of.the.host:port",
-            }
+            },
         )
         self.assertEqual(
-            new_data['dflow_s3_config'], 
+            new_data["dflow_s3_config"],
             {
                 "s3_endpoint": "address.of.the.s3.sever:port",
-            }
+            },
         )
         self.assertEqual(
-            new_data['bohrium_config'],
+            new_data["bohrium_config"],
             None,
         )
-        self.assertEqual(old_data['model_devi_jobs'], new_data['explore']['stages'])
-        new_data['explore']['configurations'][0].pop("type")
-        self.assertEqual(old_data['sys_configs'], new_data['explore']['configurations'])
-        self.assertEqual(old_data.get('sys_prefix'), new_data['explore']['configuration_prefix'])
-        self.assertEqual(old_data['mass_map'], new_data['inputs']['mass_map'])
-        self.assertEqual(old_data['type_map'], new_data['inputs']['type_map'])
-        self.assertEqual(old_data['numb_models'], new_data['train']['numb_models'])
-        self.assertEqual(old_data['fp_task_max'], new_data['fp']['task_max'])
-        self.assertEqual(old_data['conv_accuracy'], new_data['explore']['conv_accuracy'])
-        self.assertEqual(old_data['max_numb_iter'], new_data['explore']['max_numb_iter'])
-        self.assertEqual(old_data.get('fatal_at_max', True), new_data['explore']['fatal_at_max'])
-        self.assertEqual(old_data['model_devi_f_trust_lo'], new_data['explore']['f_trust_lo'])
-        self.assertEqual(old_data['model_devi_f_trust_hi'], new_data['explore']['f_trust_hi'])
-        self.assertEqual(old_data.get('model_devi_v_trust_lo'), new_data['explore']['v_trust_lo'])
-        self.assertEqual(old_data.get('model_devi_v_trust_hi'), new_data['explore']['v_trust_hi'])
-        self.assertEqual(old_data.get('train_style', 'dp'), new_data['train']['type'])
-        self.assertEqual(old_data.get('explore_style', 'lmp'), new_data['explore']['type'])
-        self.assertEqual(old_data.get('fp_style', 'vasp'), new_data['fp']['type'])
-        self.assertEqual(normalize_step_dict(old_data.get('prep_train_config', default_config)), new_data['step_configs']['prep_train_config'])
-        self.assertEqual(normalize_step_dict(old_data.get('run_train_config', default_config)), new_data['step_configs']['run_train_config'])
-        self.assertEqual(normalize_step_dict(old_data.get('prep_explore_config', default_config)), new_data['step_configs']['prep_explore_config'])
-        self.assertEqual(normalize_step_dict(old_data.get('run_explore_config', default_config)), new_data['step_configs']['run_explore_config'])
-        self.assertEqual(normalize_step_dict(old_data.get('prep_fp_config', default_config)), new_data['step_configs']['prep_fp_config'])
-        self.assertEqual(normalize_step_dict(old_data.get('run_fp_config', default_config)), new_data['step_configs']['run_fp_config'])
-        self.assertEqual(normalize_step_dict(old_data.get('select_confs_config', default_config)), new_data['step_configs']['select_confs_config'])
-        self.assertEqual(normalize_step_dict(old_data.get('collect_data_config', default_config)), new_data['step_configs']['collect_data_config'])
-        self.assertEqual(normalize_step_dict(old_data.get('cl_step_config', default_config)), new_data['step_configs']['cl_step_config'])
-        self.assertEqual(old_data.get('upload_python_packages', None), new_data['upload_python_packages'])
-        self.assertEqual(old_data['type_map'], new_data['inputs']['type_map'])
-        self.assertEqual(old_data['numb_models'], new_data['train']['numb_models'])
+        self.assertEqual(old_data["model_devi_jobs"], new_data["explore"]["stages"])
+        new_data["explore"]["configurations"][0].pop("type")
+        self.assertEqual(old_data["sys_configs"], new_data["explore"]["configurations"])
+        self.assertEqual(
+            old_data.get("sys_prefix"), new_data["explore"]["configuration_prefix"]
+        )
+        self.assertEqual(old_data["mass_map"], new_data["inputs"]["mass_map"])
+        self.assertEqual(old_data["type_map"], new_data["inputs"]["type_map"])
+        self.assertEqual(old_data["numb_models"], new_data["train"]["numb_models"])
+        self.assertEqual(old_data["fp_task_max"], new_data["fp"]["task_max"])
+        self.assertEqual(
+            old_data["conv_accuracy"], new_data["explore"]["conv_accuracy"]
+        )
+        self.assertEqual(
+            old_data["max_numb_iter"], new_data["explore"]["max_numb_iter"]
+        )
+        self.assertEqual(
+            old_data.get("fatal_at_max", True), new_data["explore"]["fatal_at_max"]
+        )
+        self.assertEqual(
+            old_data["model_devi_f_trust_lo"], new_data["explore"]["f_trust_lo"]
+        )
+        self.assertEqual(
+            old_data["model_devi_f_trust_hi"], new_data["explore"]["f_trust_hi"]
+        )
+        self.assertEqual(
+            old_data.get("model_devi_v_trust_lo"), new_data["explore"]["v_trust_lo"]
+        )
+        self.assertEqual(
+            old_data.get("model_devi_v_trust_hi"), new_data["explore"]["v_trust_hi"]
+        )
+        self.assertEqual(old_data.get("train_style", "dp"), new_data["train"]["type"])
+        self.assertEqual(
+            old_data.get("explore_style", "lmp"), new_data["explore"]["type"]
+        )
+        self.assertEqual(old_data.get("fp_style", "vasp"), new_data["fp"]["type"])
+        self.assertEqual(
+            normalize_step_dict(old_data.get("prep_train_config", default_config)),
+            new_data["step_configs"]["prep_train_config"],
+        )
+        self.assertEqual(
+            normalize_step_dict(old_data.get("run_train_config", default_config)),
+            new_data["step_configs"]["run_train_config"],
+        )
+        self.assertEqual(
+            normalize_step_dict(old_data.get("prep_explore_config", default_config)),
+            new_data["step_configs"]["prep_explore_config"],
+        )
+        self.assertEqual(
+            normalize_step_dict(old_data.get("run_explore_config", default_config)),
+            new_data["step_configs"]["run_explore_config"],
+        )
+        self.assertEqual(
+            normalize_step_dict(old_data.get("prep_fp_config", default_config)),
+            new_data["step_configs"]["prep_fp_config"],
+        )
+        self.assertEqual(
+            normalize_step_dict(old_data.get("run_fp_config", default_config)),
+            new_data["step_configs"]["run_fp_config"],
+        )
+        self.assertEqual(
+            normalize_step_dict(old_data.get("select_confs_config", default_config)),
+            new_data["step_configs"]["select_confs_config"],
+        )
+        self.assertEqual(
+            normalize_step_dict(old_data.get("collect_data_config", default_config)),
+            new_data["step_configs"]["collect_data_config"],
+        )
+        self.assertEqual(
+            normalize_step_dict(old_data.get("cl_step_config", default_config)),
+            new_data["step_configs"]["cl_step_config"],
+        )
+        self.assertEqual(
+            old_data.get("upload_python_packages", None),
+            new_data["upload_python_packages"],
+        )
+        self.assertEqual(old_data["type_map"], new_data["inputs"]["type_map"])
+        self.assertEqual(old_data["numb_models"], new_data["train"]["numb_models"])
         # self.assertEqual(old_data['default_training_param'], new_data['train']['template_script'])
-        self.assertEqual(new_data['train']['template_script'], "dp_input_template")
-        self.assertEqual(RunDPTrain.normalize_config({}), new_data['train']['config'])
-        self.assertEqual(old_data.get('lmp_config', {}), new_data['explore']['config'])
-        self.assertEqual(old_data.get('fp_config', {}), new_data['fp']['run_config'])
-        self.assertEqual(old_data['fp_pp_files'], new_data['fp']['inputs_config']['pp_files'])
-        self.assertEqual(old_data['fp_incar'], new_data['fp']['inputs_config']['incar'])
-        self.assertEqual(old_data.get('init_data_prefix'), new_data['inputs']['init_data_prefix'])
-        self.assertEqual(old_data['init_data_sys'], new_data['inputs']['init_data_sys'])
-
+        self.assertEqual(new_data["train"]["template_script"], "dp_input_template")
+        self.assertEqual(RunDPTrain.normalize_config({}), new_data["train"]["config"])
+        self.assertEqual(old_data.get("lmp_config", {}), new_data["explore"]["config"])
+        self.assertEqual(old_data.get("fp_config", {}), new_data["fp"]["run_config"])
+        self.assertEqual(
+            old_data["fp_pp_files"], new_data["fp"]["inputs_config"]["pp_files"]
+        )
+        self.assertEqual(old_data["fp_incar"], new_data["fp"]["inputs_config"]["incar"])
+        self.assertEqual(
+            old_data.get("init_data_prefix"), new_data["inputs"]["init_data_prefix"]
+        )
+        self.assertEqual(old_data["init_data_sys"], new_data["inputs"]["init_data_sys"])
 
     def test_bohrium(self):
         new_data = normalize(json.loads(new_str_bhr))
         self.assertEqual(
-            new_data['bohrium_config'],
+            new_data["bohrium_config"],
             {
-                "username" : "foo",
-                "password" : "bar",
-                "project_id" : 10086,
+                "username": "foo",
+                "password": "bar",
+                "project_id": 10086,
                 "host": "https://workflows.deepmodeling.com",
                 "k8s_api_server": "https://workflows.deepmodeling.com",
                 "repo_key": "oss-bohrium",
-                "storage_client" : "dflow.plugins.bohrium.TiefblueClient",
+                "storage_client": "dflow.plugins.bohrium.TiefblueClient",
             },
         )
-        
 
 
-old_str = textwrap.dedent("""
+old_str = textwrap.dedent(
+    """
 {
     "train_style" : "dp",
     "explore_style" : "lmp",
@@ -207,7 +259,7 @@ old_str = textwrap.dedent("""
 	"init/al.fcc.01x01x01/02.md/sys-0004/deepmd",
 	"init/mg.fcc.01x01x01/02.md/sys-0004/deepmd"
     ],
-    "sys_configs_prefix": "", 
+    "sys_configs_prefix": "",
     "sys_configs":	[
 	{
 	    "lattice" : ["fcc", 4.57],
@@ -277,18 +329,19 @@ old_str = textwrap.dedent("""
 	{ "_idx": 0, "ensemble": "nvt", "nsteps": 20, "press": [1.0,2.0], "sys_idx": [0], "temps": [50,100], "trj_freq": 10, "n_sample" : 3 }
     ],
 
-    "_comment":		" 02.fp ",    
+    "_comment":		" 02.fp ",
     "fp_style":		"vasp",
     "fp_task_max":	2,
     "fp_pp_files":	{"Al" : "vasp/POTCAR.Al", "Mg" : "vasp/POTCAR.Mg"},
     "fp_incar":         "vasp/INCAR",
     "_comment":		" that's all "
 }
-""")
+"""
+)
 
 
-
-new_str = textwrap.dedent("""
+new_str = textwrap.dedent(
+    """
 {
     "dflow_config" : {
 	"host" : "http://address.of.the.host:port"
@@ -407,7 +460,7 @@ new_str = textwrap.dedent("""
 	"fatal_at_max" :	false,
 	"f_trust_lo":		0.05,
 	"f_trust_hi":		0.50,
-	"configuration_prefix": null, 
+	"configuration_prefix": null,
 	"configuration":	[
 	    {
                 "type" : "alloy",
@@ -418,7 +471,7 @@ new_str = textwrap.dedent("""
 	    }
 	],
 	"stages":	[
-	    { "_idx": 0, "ensemble": "nvt", "nsteps": 20, "press": [1.0,2.0], "sys_idx": [0], "temps": [50,100], "trj_freq": 10, "n_sample" : 3 
+	    { "_idx": 0, "ensemble": "nvt", "nsteps": 20, "press": [1.0,2.0], "sys_idx": [0], "temps": [50,100], "trj_freq": 10, "n_sample" : 3
 	    }
 	],
 	"_comment" : "all"
@@ -438,10 +491,12 @@ new_str = textwrap.dedent("""
 	"_comment" : "all"
     }
 }
-""")
+"""
+)
 
 
-new_str_bhr = textwrap.dedent("""
+new_str_bhr = textwrap.dedent(
+    """
 {
     "bohrium_config": {
         "username": "foo",
@@ -491,7 +546,7 @@ new_str_bhr = textwrap.dedent("""
 	"fatal_at_max" :	false,
 	"f_trust_lo":		0.05,
 	"f_trust_hi":		0.50,
-	"configuration_prefix": null, 
+	"configuration_prefix": null,
 	"configuration":	[
 	],
 	"stages":	[
@@ -513,4 +568,5 @@ new_str_bhr = textwrap.dedent("""
 	"_comment" : "all"
     }
 }
-""")
+"""
+)
