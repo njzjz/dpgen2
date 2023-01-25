@@ -120,7 +120,7 @@
 	"f_trust_lo":		0.05,
 	"f_trust_hi":		0.50,
 	"output_nopbc":		false,
-	"configuration_prefix": null, 
+	"configuration_prefix": null,
 	"configurations":	[
 	    {
 		"type": "alloy",
@@ -143,7 +143,7 @@
 		    "type" : "lmp-template",
 		    "lmp" : "template.lammps", "trj_freq" : 10, "revisions" : {"V_NSTEPS" : [40], "V_TEMP" : [100, 200]},
 		    "conf_idx": [0], "n_sample" : 3
-		}		
+		}
 	    ]
 	],
 	"_comment" : "all"
