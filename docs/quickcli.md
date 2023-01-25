@@ -73,4 +73,3 @@ If a workflow stopped abnormally, one may submit a new workflow with some steps 
 dpgen2 resubmit input.json WFID --reuse 0-41
 ```
 The steps of workflow WDID 0-41 (0<=id<41, note that 41 is not included) will be reused in the new workflow. The indexes of the steps are printed by `dpgen2 showkey`. In the example, all the steps before the `iter-000001--run-fp-000000` will be used in the new workflow.
-

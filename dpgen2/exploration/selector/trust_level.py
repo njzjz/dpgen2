@@ -1,10 +1,10 @@
-class TrustLevel():
+class TrustLevel:
     def __init__(
-            self,
-            level_f_lo,
-            level_f_hi,
-            level_v_lo = None,
-            level_v_hi = None,
+        self,
+        level_f_lo,
+        level_f_hi,
+        level_v_lo=None,
+        level_v_hi=None,
     ):
         self._level_f_lo = level_f_lo
         self._level_f_hi = level_f_hi
