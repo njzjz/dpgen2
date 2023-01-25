@@ -6,8 +6,6 @@ from pathlib import Path
 from dflow.python import (
     OPIO,
 )
-
-
 @contextmanager
 def set_directory(path: Path):
     """Sets the current working path within the context.
@@ -20,7 +18,7 @@ def set_directory(path: Path):
     Yields
     ------
     None
-
+    
     Examples
     --------
     >>> with set_directory("some_path"):
@@ -37,28 +35,24 @@ def set_directory(path: Path):
 
 def chdir(path_key: str):
     """Returns a decorator that can change the current working path.
-
+    
     Parameters
     ----------
     path_key : str
         key to OPIO
-
+    
     Examples
     --------
     >>> class SomeOP(OP):
     ...     @chdir("path")
     ...     def execute(self, ip: OPIO):
-    ...         do_something()
+    ...         do_something() 
     """
-
     def decorator(func: Callable):
         """Change the current working path."""
-
         @wraps(func)
-        def wrapper(self, ip: OPIO):
+        def wrapper(self, ip : OPIO):
             with set_directory(Path(ip[path_key])):
                 return func(self, ip)
-
         return wrapper
-
     return decorator

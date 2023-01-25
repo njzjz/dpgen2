@@ -36,7 +36,9 @@ from .workflow import (
     add_subparser_workflow_subcommand,
     execute_workflow_subcommand,
 )
-from dpgen2 import __version__
+from dpgen2 import (
+    __version__
+)
 
 
 def main_parser() -> argparse.ArgumentParser:
@@ -57,7 +59,7 @@ def main_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     subparsers = parser.add_subparsers(title="Valid subcommands", dest="command")
-
+    
     ##########################################
     # submit
     parser_run = subparsers.add_parser(
@@ -69,10 +71,7 @@ def main_parser() -> argparse.ArgumentParser:
         "CONFIG", help="the config file in json format defining the workflow."
     )
     parser_run.add_argument(
-        "-o",
-        "--old-compatible",
-        action="store_true",
-        help="compatible with old-style input script used in dpgen2 < 0.0.6.",
+        "-o", "--old-compatible", action='store_true', help="compatible with old-style input script used in dpgen2 < 0.0.6."
     )
 
     ##########################################
@@ -85,32 +84,20 @@ def main_parser() -> argparse.ArgumentParser:
     parser_resubmit.add_argument(
         "CONFIG", help="the config file in json format defining the workflow."
     )
-    parser_resubmit.add_argument("ID", help="the ID of the existing workflow.")
     parser_resubmit.add_argument(
-        "-l",
-        "--list",
-        action="store_true",
-        help="list the Steps of the existing workflow.",
+        "ID", help="the ID of the existing workflow."
     )
     parser_resubmit.add_argument(
-        "-u",
-        "--reuse",
-        type=str,
-        nargs="+",
-        default=None,
-        help="specify which Steps to reuse.",
+        "-l", "--list", action='store_true', help="list the Steps of the existing workflow."
     )
     parser_resubmit.add_argument(
-        "-k",
-        "--keep-schedule",
-        action="store_true",
-        help="if set then keep schedule of the old workflow. otherwise use the schedule defined in the input file",
+        "-u", "--reuse", type=str, nargs='+', default=None, help="specify which Steps to reuse."
     )
     parser_resubmit.add_argument(
-        "-o",
-        "--old-compatible",
-        action="store_true",
-        help="compatible with old-style input script used in dpgen2 < 0.0.6.",
+        "-k", "--keep-schedule", action='store_true', help="if set then keep schedule of the old workflow. otherwise use the schedule defined in the input file"
+    )
+    parser_resubmit.add_argument(
+        "-o", "--old-compatible", action='store_true', help="compatible with old-style input script used in dpgen2 < 0.0.6."
     )
 
     ##########################################
@@ -120,8 +107,13 @@ def main_parser() -> argparse.ArgumentParser:
         help="Print the keys of the successful DPGEN2 steps",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser_showkey.add_argument("CONFIG", help="the config file in json format.")
-    parser_showkey.add_argument("ID", help="the ID of the existing workflow.")
+    parser_showkey.add_argument(
+        "CONFIG", help="the config file in json format."
+    )
+    parser_showkey.add_argument(
+        "ID", help="the ID of the existing workflow."
+    )
+
 
     ##########################################
     # status
@@ -130,8 +122,12 @@ def main_parser() -> argparse.ArgumentParser:
         help="Print the status (stage, iteration, convergence) of the  DPGEN2 workflow",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser_status.add_argument("CONFIG", help="the config file in json format.")
-    parser_status.add_argument("ID", help="the ID of the existing workflow.")
+    parser_status.add_argument(
+        "CONFIG", help="the config file in json format."
+    )
+    parser_status.add_argument(
+        "ID", help="the ID of the existing workflow."
+    )
 
     ##########################################
     # download
@@ -140,26 +136,21 @@ def main_parser() -> argparse.ArgumentParser:
         help="Download the artifacts of DPGEN2 steps",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser_download.add_argument("CONFIG", help="the config file in json format.")
-    parser_download.add_argument("ID", help="the ID of the existing workflow.")
     parser_download.add_argument(
-        "-k",
-        "--keys",
-        type=str,
-        nargs="+",
-        help="the keys of the downloaded steps. If not provided download all artifacts",
+        "CONFIG", help="the config file in json format."
     )
     parser_download.add_argument(
-        "-p",
-        "--prefix",
-        type=str,
-        help="the prefix of the path storing the download artifacts",
+        "ID", help="the ID of the existing workflow."
     )
     parser_download.add_argument(
-        "-n",
-        "--no-check-point",
-        action="store_false",
-        help="if specified, download regardless whether check points exist.",
+        "-k","--keys", type=str, nargs='+', help="the keys of the downloaded steps. If not provided download all artifacts"
+    )
+    parser_download.add_argument(
+        "-p","--prefix", type=str, help="the prefix of the path storing the download artifacts"
+    )
+    parser_download.add_argument(
+        "-n","--no-check-point", action='store_false',
+        help="if specified, download regardless whether check points exist."
     )
 
     ##########################################
@@ -169,40 +160,30 @@ def main_parser() -> argparse.ArgumentParser:
         help="Watch a DPGEN2 workflow",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser_watch.add_argument("CONFIG", help="the config file in json format.")
-    parser_watch.add_argument("ID", help="the ID of the existing workflow.")
     parser_watch.add_argument(
-        "-k",
-        "--keys",
-        type=str,
-        nargs="+",
-        default=default_watching_keys,
-        help="the subkey to watch. For example, 'prep-run-train' 'prep-run-lmp'",
+        "CONFIG", help="the config file in json format."
     )
     parser_watch.add_argument(
-        "-f",
-        "--frequency",
-        type=float,
-        default=600.0,
-        help="the frequency of workflow status query. In unit of second",
+        "ID", help="the ID of the existing workflow."
     )
     parser_watch.add_argument(
-        "-d",
-        "--download",
-        action="store_true",
-        help="whether to download artifacts of a step when it finishes",
+        "-k","--keys", type=str, nargs='+', default=default_watching_keys,
+        help="the subkey to watch. For example, 'prep-run-train' 'prep-run-lmp'"
     )
     parser_watch.add_argument(
-        "-p",
-        "--prefix",
-        type=str,
-        help="the prefix of the path storing the download artifacts",
+        "-f","--frequency", type=float, default=600.,
+        help="the frequency of workflow status query. In unit of second"
     )
     parser_watch.add_argument(
-        "-n",
-        "--no-check-point",
-        action="store_false",
-        help="if specified, download regardless whether check points exist.",
+        "-d","--download", action='store_true',
+        help="whether to download artifacts of a step when it finishes"
+    )
+    parser_watch.add_argument(
+        "-p","--prefix", type=str, help="the prefix of the path storing the download artifacts"
+    )
+    parser_watch.add_argument(
+        "-n","--no-check-point", action='store_false',
+        help="if specified, download regardless whether check points exist."
     )
 
     # workflow subcommands
@@ -212,9 +193,9 @@ def main_parser() -> argparse.ArgumentParser:
     # --version
     parser.add_argument(
         "-v",
-        "--version",
-        action="version",
-        version="DPGEN v%s" % __version__,
+        '--version', 
+        action='version', 
+        version='DPGEN v%s' % __version__,
     )
 
     return parser
@@ -236,7 +217,7 @@ def parse_args(args: Optional[List[str]] = None):
         parser.print_help()
 
     return parsed_args
-
+    
 
 def main():
     #####################################
@@ -258,9 +239,9 @@ def main():
             config = json.load(fp)
         wfid = args.ID
         resubmit_concurrent_learning(
-            config,
-            wfid,
-            list_steps=args.list,
+            config, 
+            wfid, 
+            list_steps=args.list, 
             reuse=args.reuse,
             old_style=args.old_compatible,
             replace_scheduler=(not args.keep_schedule),
@@ -270,24 +251,21 @@ def main():
             config = json.load(fp)
         wfid = args.ID
         status(
-            wfid,
-            config,
-        )
+            wfid, config,
+        )        
     elif args.command == "showkey":
         with open(args.CONFIG) as fp:
             config = json.load(fp)
         wfid = args.ID
         showkey(
-            wfid,
-            config,
-        )
+            wfid, config,
+        )        
     elif args.command == "download":
         with open(args.CONFIG) as fp:
             config = json.load(fp)
         wfid = args.ID
         download(
-            wfid,
-            config,
+            wfid, config,
             wf_keys=args.keys,
             prefix=args.prefix,
             chk_pnt=args.no_check_point,
@@ -297,8 +275,7 @@ def main():
             config = json.load(fp)
         wfid = args.ID
         watch(
-            wfid,
-            config,
+            wfid, config, 
             watching_keys=args.keys,
             frequency=args.frequency,
             download=args.download,
@@ -314,3 +291,4 @@ def main():
         pass
     else:
         raise RuntimeError(f"unknown command {args.command}")
+        

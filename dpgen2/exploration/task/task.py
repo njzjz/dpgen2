@@ -12,9 +12,8 @@ from typing import (
     Dict,
 )
 
-
-class ExplorationTask:
-    """Define the files needed by an exploration task.
+class ExplorationTask():
+    """Define the files needed by an exploration task. 
 
     Examples
     --------
@@ -22,22 +21,21 @@ class ExplorationTask:
     >>> files = exploration_task.files()
     ... for file_name, file_content in files.items():
     ...     with open(file_name, 'w') as fp:
-    ...         fp.write(file_content)
+    ...         fp.write(file_content)    
 
     """
-
     def __init__(
-        self,
+            self, 
     ):
         self._files = {}
 
     def add_file(
-        self,
-        fname: str,
-        fcont: str,
+            self,
+            fname : str,
+            fcont : str,
     ):
         """Add file to the task
-
+        
         Parameters
         ----------
         fname : str
@@ -51,7 +49,7 @@ class ExplorationTask:
 
     def files(self) -> Dict:
         """Get all files for the task.
-
+        
         Returns
         -------
         files : dict
@@ -61,13 +59,14 @@ class ExplorationTask:
 
 
 class ExplorationTaskGroup(Sequence):
-    """A group of exploration tasks. Implemented as a `list` of `ExplorationTask`."""
+    """A group of exploration tasks. Implemented as a `list` of `ExplorationTask`.
 
+    """
     def __init__(self):
         super().__init__()
         self.clear()
 
-    def __getitem__(self, ii: int) -> ExplorationTask:
+    def __getitem__(self, ii:int) -> ExplorationTask:
         """Get the `ii`th task"""
         return self.task_list[ii]
 
@@ -75,12 +74,12 @@ class ExplorationTaskGroup(Sequence):
         """Get the number of tasks in the group"""
         return len(self.task_list)
 
-    def clear(self) -> None:
+    def clear(self)->None:
         self._task_list = []
 
     @property
     def task_list(self) -> List[ExplorationTask]:
-        """Get the `list` of `ExplorationTask`"""
+        """Get the `list` of `ExplorationTask`""" 
         return self._task_list
 
     def add_task(self, task: ExplorationTask):
@@ -89,8 +88,8 @@ class ExplorationTaskGroup(Sequence):
         return self
 
     def add_group(
-        self,
-        group: "ExplorationTaskGroup",
+            self,
+            group : 'ExplorationTaskGroup',
     ):
         """Add another group to the group."""
         # see https://www.python.org/dev/peps/pep-0484/#forward-references for forward references
@@ -98,25 +97,25 @@ class ExplorationTaskGroup(Sequence):
         return self
 
     def __add__(
-        self,
-        group: "ExplorationTaskGroup",
-    ):
+            self,
+            group : 'ExplorationTaskGroup',
+    ):        
         """Add another group to the group."""
         return self.add_group(group)
 
 
 class FooTask(ExplorationTask):
     def __init__(
-        self,
-        conf_name="conf.lmp",
-        conf_cont="",
-        inpu_name="in.lammps",
-        inpu_cont="",
+            self, 
+            conf_name = 'conf.lmp', 
+            conf_cont = '',
+            inpu_name = 'in.lammps',
+            inpu_cont = '',
     ):
         super().__init__()
         self._files = {
-            conf_name: conf_cont,
-            inpu_name: inpu_cont,
+            conf_name : conf_cont,
+            inpu_name : inpu_cont,
         }
 
 
@@ -126,13 +125,10 @@ class FooTaskGroup(ExplorationTaskGroup):
         # TODO: confirm the following is correct
         self.tlist = ExplorationTaskGroup()
         for ii in range(numb_task):
-            self.tlist.add_task(
-                FooTask(
-                    f"conf.{ii}",
-                    f"this is conf.{ii}",
-                    f"input.{ii}",
-                    f"this is input.{ii}",
-                )
+            self.tlist.add_task( 
+                FooTask(f'conf.{ii}', f'this is conf.{ii}',
+                        f'input.{ii}', f'this is input.{ii}',
+                        )
             )
 
     @property
@@ -140,8 +136,9 @@ class FooTaskGroup(ExplorationTaskGroup):
         return self.tlist
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     grp = FooTaskGroup(3)
     for ii in grp:
         fcs = ii.files()
         print(fcs)
+
