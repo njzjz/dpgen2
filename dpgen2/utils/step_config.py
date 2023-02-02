@@ -1,13 +1,12 @@
-import dargs
-from dargs import (
-    Argument,
-    Variant,
-)
-from dpgen2.constants import default_image
-from dflow.plugins.lebesgue import LebesgueExecutor
-from dflow.plugins.dispatcher import DispatcherExecutor
-from dflow import config
 import os
+
+import dargs
+from dargs import Argument, Variant
+from dflow import config
+from dflow.plugins.dispatcher import DispatcherExecutor
+from dflow.plugins.lebesgue import LebesgueExecutor
+
+from dpgen2.constants import default_image
 
 
 def lebesgue_extra_args():

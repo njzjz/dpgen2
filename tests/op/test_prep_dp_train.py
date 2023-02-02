@@ -1,14 +1,14 @@
-from op.context import dpgen2
-import numpy as np
-import unittest, json, shutil
-from mock import mock
-
-from dflow.python import OP, OPIO, OPIOSign, Artifact
+import json
+import shutil
+import unittest
 from pathlib import Path
-from dpgen2.constants import (
-    train_task_pattern,
-    train_script_name,
-)
+
+import numpy as np
+from dflow.python import OP, OPIO, Artifact, OPIOSign
+from mock import mock
+from op.context import dpgen2
+
+from dpgen2.constants import train_script_name, train_task_pattern
 from dpgen2.op.prep_dp_train import PrepDPTrain
 
 template_script_se_e2_a = {

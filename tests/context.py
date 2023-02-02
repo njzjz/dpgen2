@@ -1,4 +1,5 @@
-import sys, os
+import os
+import sys
 
 dpgen_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, dpgen_path)

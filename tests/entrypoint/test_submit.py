@@ -1,24 +1,13 @@
-from .context import dpgen2
-import numpy as np
-import unittest, json, shutil, os
+import json
+import os
 import random
+import shutil
 import tempfile
-import dpdata
+import unittest
 from pathlib import Path
-from dpgen2.entrypoint.submit import (
-    expand_idx,
-    print_list_steps,
-    update_reuse_step_scheduler,
-    copy_scheduler_plans,
-)
-from dpgen2.exploration.scheduler import (
-    ConvergenceCheckStageScheduler,
-    ExplorationScheduler,
-)
-from dpgen2.exploration.report import ExplorationReport, ExplorationReportTrustLevels
-from dpgen2.exploration.task import ExplorationTaskGroup, ExplorationStage
-from dpgen2.exploration.selector import ConfSelectorFrames
-from dpgen2.exploration.render import TrajRenderLammps
+
+import dpdata
+import numpy as np
 from mocked_ops import (
     MockedExplorationReport,
     MockedExplorationTaskGroup,
@@ -27,6 +16,22 @@ from mocked_ops import (
     MockedStage1,
 )
 
+from dpgen2.entrypoint.submit import (
+    copy_scheduler_plans,
+    expand_idx,
+    print_list_steps,
+    update_reuse_step_scheduler,
+)
+from dpgen2.exploration.render import TrajRenderLammps
+from dpgen2.exploration.report import ExplorationReport, ExplorationReportTrustLevels
+from dpgen2.exploration.scheduler import (
+    ConvergenceCheckStageScheduler,
+    ExplorationScheduler,
+)
+from dpgen2.exploration.selector import ConfSelectorFrames
+from dpgen2.exploration.task import ExplorationStage, ExplorationTaskGroup
+
+from .context import dpgen2
 
 ifc0 = """Al1 
 1.0

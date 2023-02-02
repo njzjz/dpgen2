@@ -1,15 +1,10 @@
-import dpdata
-import dargs
 import tempfile
+from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import (
-    List,
-    Dict,
-)
-from abc import (
-    ABC,
-    abstractmethod,
-)
+from typing import Dict, List
+
+import dargs
+import dpdata
 
 
 class ConfGenerator(ABC):

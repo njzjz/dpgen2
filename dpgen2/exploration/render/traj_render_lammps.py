@@ -1,14 +1,10 @@
-import numpy as np
-import dpdata
-from typing import (
-    List,
-    Optional,
-    Tuple,
-    Union,
-)
-from .traj_render import TrajRender
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, List, Optional, Tuple, Union
+
+import dpdata
+import numpy as np
+
+from .traj_render import TrajRender
 
 if TYPE_CHECKING:
     from dpgen2.exploration.selector import ConfFilters

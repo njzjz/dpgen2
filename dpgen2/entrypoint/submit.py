@@ -1,107 +1,77 @@
-import glob, dpdata, os, pickle, logging, copy
+import copy
+import glob
+import logging
+import os
+import pickle
 from pathlib import Path
+from typing import Dict, List, Optional, Union
+
+import dpdata
 from dflow import (
-    InputParameter,
-    OutputParameter,
-    Inputs,
     InputArtifact,
-    Outputs,
+    InputParameter,
+    Inputs,
     OutputArtifact,
-    Workflow,
+    OutputParameter,
+    Outputs,
+    S3Artifact,
     Step,
     Steps,
-    upload_artifact,
-    download_artifact,
-    S3Artifact,
+    Workflow,
     argo_range,
+    download_artifact,
+    upload_artifact,
 )
 from dflow.python import (
-    PythonOPTemplate,
     OP,
     OPIO,
-    OPIOSign,
     Artifact,
-    upload_packages,
     FatalError,
+    OPIOSign,
+    PythonOPTemplate,
     TransientError,
+    upload_packages,
 )
 
-from dpgen2.op import (
-    PrepDPTrain,
-    RunDPTrain,
-    PrepLmp,
-    RunLmp,
-    SelectConfs,
-    CollectData,
-)
-from dpgen2.superop import (
-    PrepRunDPTrain,
-    PrepRunLmp,
-    PrepRunFp,
-    ConcurrentLearningBlock,
-)
-from dpgen2.flow import (
-    ConcurrentLearning,
-)
-from dpgen2.fp import (
-    fp_styles,
-)
-from dpgen2.conf import (
-    conf_styles,
-)
-from dpgen2.exploration.report import (
-    conv_styles,
-)
+from dpgen2.conf import conf_styles
+from dpgen2.constants import default_host, default_image
+from dpgen2.entrypoint.args import normalize as normalize_args
+from dpgen2.entrypoint.common import expand_idx, expand_sys_str, global_config_workflow
+from dpgen2.exploration.render import TrajRenderLammps
+from dpgen2.exploration.report import ExplorationReportTrustLevels, conv_styles
 from dpgen2.exploration.scheduler import (
-    ExplorationScheduler,
     ConvergenceCheckStageScheduler,
+    ExplorationScheduler,
 )
+from dpgen2.exploration.selector import ConfSelectorFrames
 from dpgen2.exploration.task import (
     ExplorationStage,
     ExplorationTask,
-    NPTTaskGroup,
     LmpTemplateTaskGroup,
+    NPTTaskGroup,
     make_task_group_from_config,
 )
-from dpgen2.exploration.selector import (
-    ConfSelectorFrames,
-)
-from dpgen2.exploration.render import (
-    TrajRenderLammps,
-)
-from dpgen2.exploration.report import (
-    ExplorationReportTrustLevels,
-)
-from dpgen2.constants import (
-    default_image,
-    default_host,
+from dpgen2.flow import ConcurrentLearning
+from dpgen2.fp import fp_styles
+from dpgen2.op import CollectData, PrepDPTrain, PrepLmp, RunDPTrain, RunLmp, SelectConfs
+from dpgen2.superop import (
+    ConcurrentLearningBlock,
+    PrepRunDPTrain,
+    PrepRunFp,
+    PrepRunLmp,
 )
 from dpgen2.utils import (
-    dump_object_to_file,
-    load_object_from_file,
-    sort_slice_ops,
-    print_keys_in_nice_format,
-    workflow_config_from_dict,
-    matched_step_key,
-    bohrium_config_from_dict,
     BinaryFileInput,
+    bohrium_config_from_dict,
+    dump_object_to_file,
     get_subkey,
+    load_object_from_file,
+    matched_step_key,
+    print_keys_in_nice_format,
+    sort_slice_ops,
+    workflow_config_from_dict,
 )
 from dpgen2.utils.step_config import normalize as normalize_step_dict
-from dpgen2.entrypoint.common import (
-    global_config_workflow,
-    expand_sys_str,
-    expand_idx,
-)
-from dpgen2.entrypoint.args import (
-    normalize as normalize_args,
-)
-from typing import (
-    Union,
-    List,
-    Dict,
-    Optional,
-)
 
 default_config = normalize_step_dict(
     {

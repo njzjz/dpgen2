@@ -1,19 +1,19 @@
-from utils.context import dpgen2
-import numpy as np
-import unittest, json, shutil, os
+import json
+import os
 import random
+import shutil
 import tempfile
-import dpdata
-import dflow
+import unittest
 from pathlib import Path
-from dpgen2.utils.download_dpgen2_artifacts import (
-    download_dpgen2_artifacts,
-)
-from dpgen2.entrypoint.watch import (
-    update_finished_steps,
-)
 
+import dflow
+import dpdata
 import mock
+import numpy as np
+from utils.context import dpgen2
+
+from dpgen2.entrypoint.watch import update_finished_steps
+from dpgen2.utils.download_dpgen2_artifacts import download_dpgen2_artifacts
 
 
 class MockedArti:

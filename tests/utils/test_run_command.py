@@ -1,7 +1,12 @@
-from utils.context import dpgen2
-import numpy as np
-import unittest, json, shutil, os
+import json
+import os
+import shutil
+import unittest
 from pathlib import Path
+
+import numpy as np
+from utils.context import dpgen2
+
 from dpgen2.utils.run_command import run_command
 
 

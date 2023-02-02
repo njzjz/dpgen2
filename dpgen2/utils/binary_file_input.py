@@ -1,15 +1,11 @@
 """Binary file inputs"""
-from dflow.python import (
-    TransientError,
-)
-from typing import Tuple, List, Any, Union, Optional
-from dargs import (
-    dargs,
-    Argument,
-)
 import os
-from pathlib import Path
 import warnings
+from pathlib import Path
+from typing import Any, List, Optional, Tuple, Union
+
+from dargs import Argument, dargs
+from dflow.python import TransientError
 
 
 class BinaryFileInput:

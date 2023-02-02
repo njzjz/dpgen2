@@ -1,10 +1,7 @@
-import numpy as np
 import re
-from typing import (
-    List,
-    Optional,
-    Any,
-)
+from typing import Any, List, Optional
+
+import numpy as np
 
 
 def get_subkey(

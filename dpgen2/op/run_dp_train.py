@@ -1,29 +1,17 @@
-import os, json, dpdata, glob, shutil
+import glob
+import json
+import os
+import shutil
 from pathlib import Path
-from dpgen2.utils.run_command import run_command
+from typing import List, Tuple
+
+import dpdata
+from dargs import Argument, ArgumentEncoder, Variant, dargs
+from dflow.python import OP, OPIO, Artifact, FatalError, OPIOSign, TransientError
+
+from dpgen2.constants import train_script_name, train_task_pattern
 from dpgen2.utils.chdir import set_directory
-from dflow.python import (
-    OP,
-    OPIO,
-    OPIOSign,
-    Artifact,
-    TransientError,
-    FatalError,
-)
-from typing import (
-    Tuple,
-    List,
-)
-from dpgen2.constants import (
-    train_task_pattern,
-    train_script_name,
-)
-from dargs import (
-    dargs,
-    Argument,
-    Variant,
-    ArgumentEncoder,
-)
+from dpgen2.utils.run_command import run_command
 
 
 class RunDPTrain(OP):

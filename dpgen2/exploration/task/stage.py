@@ -1,20 +1,10 @@
+from abc import ABC, abstractmethod
+from typing import List
+
+from dpgen2.constants import lmp_conf_name, lmp_input_name, model_name_pattern
 from dpgen2.exploration.task import ExplorationTaskGroup
-from abc import (
-    ABC,
-    abstractmethod,
-)
-from dpgen2.constants import (
-    lmp_conf_name,
-    lmp_input_name,
-    model_name_pattern,
-)
-from . import (
-    ExplorationTaskGroup,
-    ExplorationTask,
-)
-from typing import (
-    List,
-)
+
+from . import ExplorationTask, ExplorationTaskGroup
 
 
 class ExplorationStage:

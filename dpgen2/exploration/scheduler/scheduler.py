@@ -1,20 +1,14 @@
-import numpy as np
-
-from typing import (
-    List,
-    Optional,
-    Tuple,
-)
-from dflow.python import (
-    FatalError,
-)
 from pathlib import Path
-from . import (
-    StageScheduler,
-)
+from typing import List, Optional, Tuple
+
+import numpy as np
+from dflow.python import FatalError
+
 from dpgen2.exploration.report import ExplorationReport
-from dpgen2.exploration.task import ExplorationTaskGroup, ExplorationStage
 from dpgen2.exploration.selector import ConfSelector
+from dpgen2.exploration.task import ExplorationStage, ExplorationTaskGroup
+
+from . import StageScheduler
 
 
 class ExplorationScheduler:

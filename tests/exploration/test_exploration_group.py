@@ -1,21 +1,20 @@
-import os, textwrap
-import numpy as np
+import os
+import textwrap
 import unittest
-
-from typing import Set, List
 from pathlib import Path
+from typing import List, Set
+
+import numpy as np
 
 try:
     from exploration.context import dpgen2
 except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
-from dpgen2.exploration.task import (
-    NPTTaskGroup,
-    ExplorationStage,
-)
-from dpgen2.constants import lmp_conf_name, lmp_input_name
 from unittest.mock import Mock, patch
+
+from dpgen2.constants import lmp_conf_name, lmp_input_name
+from dpgen2.exploration.task import ExplorationStage, NPTTaskGroup
 
 in_template_npt = textwrap.dedent(
     """variable        NSTEPS          equal 1000

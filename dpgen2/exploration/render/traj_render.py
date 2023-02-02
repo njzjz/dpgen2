@@ -1,14 +1,9 @@
-import dpdata
-import numpy as np
-from typing import (
-    List,
-    Optional,
-    Tuple,
-    Union,
-)
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, List, Optional, Tuple, Union
+
+import dpdata
+import numpy as np
 
 if TYPE_CHECKING:
     from dpgen2.exploration.selector import ConfFilters

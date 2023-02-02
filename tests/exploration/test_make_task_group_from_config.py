@@ -1,10 +1,11 @@
-import os, textwrap
-import numpy as np
-import unittest
 import itertools
-
-from typing import Set, List
+import os
+import textwrap
+import unittest
 from pathlib import Path
+from typing import List, Set
+
+import numpy as np
 
 try:
     from exploration.context import dpgen2
@@ -12,9 +13,9 @@ except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
 from dpgen2.exploration.task import (
-    make_task_group_from_config,
-    NPTTaskGroup,
     LmpTemplateTaskGroup,
+    NPTTaskGroup,
+    make_task_group_from_config,
 )
 
 

@@ -1,33 +1,30 @@
+import json
 import os
-import numpy as np
+import pickle
+import shutil
+import time
 import unittest
+from pathlib import Path
+from typing import List, Set
 
+import jsonpickle
+import numpy as np
 from dflow import (
-    InputParameter,
-    OutputParameter,
-    Inputs,
     InputArtifact,
-    Outputs,
+    InputParameter,
+    Inputs,
     OutputArtifact,
-    Workflow,
+    OutputParameter,
+    Outputs,
+    S3Artifact,
     Step,
     Steps,
-    upload_artifact,
-    download_artifact,
-    S3Artifact,
+    Workflow,
     argo_range,
+    download_artifact,
+    upload_artifact,
 )
-from dflow.python import (
-    PythonOPTemplate,
-    OP,
-    OPIO,
-    OPIOSign,
-    Artifact,
-)
-
-import time, shutil, json, jsonpickle, pickle
-from typing import Set, List
-from pathlib import Path
+from dflow.python import OP, OPIO, Artifact, OPIOSign, PythonOPTemplate
 
 try:
     from context import dpgen2
@@ -35,31 +32,29 @@ except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
 from context import (
-    upload_python_packages,
+    default_host,
+    default_image,
     skip_ut_with_dflow,
     skip_ut_with_dflow_reason,
-    default_image,
-    default_host,
+    upload_python_packages,
 )
-from dpgen2.op.prep_lmp import PrepLmp
-from dpgen2.superop.prep_run_lmp import PrepRunLmp
-from dpgen2.exploration.task import ExplorationTask, ExplorationTaskGroup
-from mocked_ops import (
-    mocked_numb_models,
-    MockedRunLmp,
-)
+from mocked_ops import MockedRunLmp, mocked_numb_models
+
 from dpgen2.constants import (
-    train_task_pattern,
-    train_script_name,
-    train_log_name,
-    model_name_pattern,
-    lmp_task_pattern,
     lmp_conf_name,
     lmp_input_name,
-    lmp_traj_name,
     lmp_log_name,
     lmp_model_devi_name,
+    lmp_task_pattern,
+    lmp_traj_name,
+    model_name_pattern,
+    train_log_name,
+    train_script_name,
+    train_task_pattern,
 )
+from dpgen2.exploration.task import ExplorationTask, ExplorationTaskGroup
+from dpgen2.op.prep_lmp import PrepLmp
+from dpgen2.superop.prep_run_lmp import PrepRunLmp
 from dpgen2.utils.step_config import normalize as normalize_step_dict
 
 default_config = normalize_step_dict(

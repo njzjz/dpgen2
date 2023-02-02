@@ -1,7 +1,10 @@
-from dflow.python import OP, OPIO, OPIOSign, Artifact
-import os, json, dpdata
-from typing import Tuple, List, Set
+import json
+import os
 from pathlib import Path
+from typing import List, Set, Tuple
+
+import dpdata
+from dflow.python import OP, OPIO, Artifact, OPIOSign
 
 
 class CollectData(OP):

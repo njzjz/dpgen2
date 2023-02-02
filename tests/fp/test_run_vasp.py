@@ -1,26 +1,17 @@
-from .context import dpgen2
-import numpy as np
-import unittest, json, shutil
-from mock import mock, patch, call
-from dflow.python import (
-    OP,
-    OPIO,
-    OPIOSign,
-    Artifact,
-    TransientError,
-)
+import json
+import shutil
+import unittest
 from pathlib import Path
-from dpgen2.constants import (
-    fp_default_log_name,
-    fp_default_out_data_name,
-)
+
+import numpy as np
+from dflow.python import OP, OPIO, Artifact, OPIOSign, TransientError
+from mock import call, mock, patch
+
+from dpgen2.constants import fp_default_log_name, fp_default_out_data_name
 from dpgen2.fp import RunVasp
-from dpgen2.fp.vasp import (
-    vasp_conf_name,
-    vasp_input_name,
-    vasp_pot_name,
-    vasp_kp_name,
-)
+from dpgen2.fp.vasp import vasp_conf_name, vasp_input_name, vasp_kp_name, vasp_pot_name
+
+from .context import dpgen2
 
 
 class TestRunVasp(unittest.TestCase):

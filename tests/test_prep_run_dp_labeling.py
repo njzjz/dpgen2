@@ -1,21 +1,23 @@
-import numpy as np
-import unittest, os, shutil
+import os
+import shutil
+import sys
+import unittest
 from pathlib import Path
 
+import dpdata
+import numpy as np
+from dargs import Argument
+from dflow.python import FatalError
+from mock import Mock, patch
+
 from dpgen2.fp.deepmd import (
-    deepmd_input_path,
-    deepmd_temp_path,
-    deepmd_teacher_model,
     PrepDeepmd,
     RunDeepmd,
+    deepmd_input_path,
+    deepmd_teacher_model,
+    deepmd_temp_path,
 )
-from dflow.python import FatalError
 from dpgen2.utils import BinaryFileInput
-from dargs import Argument
-
-import dpdata
-from mock import patch, Mock
-import sys
 
 
 class TestPrepDeepmd(unittest.TestCase):

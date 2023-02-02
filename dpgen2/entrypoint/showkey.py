@@ -1,18 +1,15 @@
-import glob, dpdata, os, pickle
+import glob
+import os
+import pickle
 from pathlib import Path
-from dflow import (
-    Workflow,
-)
+
+import dpdata
+from dflow import Workflow
+
+from dpgen2.entrypoint.args import normalize as normalize_args
+from dpgen2.entrypoint.common import global_config_workflow
 from dpgen2.entrypoint.submit import get_resubmit_keys
-from dpgen2.utils import (
-    print_keys_in_nice_format,
-)
-from dpgen2.entrypoint.common import (
-    global_config_workflow,
-)
-from dpgen2.entrypoint.args import (
-    normalize as normalize_args,
-)
+from dpgen2.utils import print_keys_in_nice_format
 
 
 def showkey(

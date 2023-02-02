@@ -1,13 +1,7 @@
 import dargs
-from dargs import (
-    Argument,
-    Variant,
-)
+from dargs import Argument, Variant
 
-from dpgen2.exploration.task import (
-    LmpTemplateTaskGroup,
-    NPTTaskGroup,
-)
+from dpgen2.exploration.task import LmpTemplateTaskGroup, NPTTaskGroup
 
 
 def npt_task_group_args():

@@ -1,21 +1,19 @@
-from op.context import dpgen2
-import numpy as np
-import unittest, json, shutil
-from mock import mock, patch, call
-from dflow.python import (
-    OP,
-    OPIO,
-    OPIOSign,
-    Artifact,
-    TransientError,
-)
+import json
+import shutil
+import unittest
 from pathlib import Path
+
+import numpy as np
+from dflow.python import OP, OPIO, Artifact, OPIOSign, TransientError
+from mock import call, mock, patch
+from op.context import dpgen2
+
 from dpgen2.constants import (
     lmp_conf_name,
     lmp_input_name,
     lmp_log_name,
-    lmp_traj_name,
     lmp_model_devi_name,
+    lmp_traj_name,
     model_name_pattern,
 )
 from dpgen2.op.run_lmp import RunLmp

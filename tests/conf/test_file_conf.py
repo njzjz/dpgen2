@@ -1,15 +1,18 @@
-from .context import dpgen2
-import textwrap
-import shutil
-import numpy as np
-import unittest, json, shutil, os
+import json
+import os
 import random
+import shutil
 import tempfile
-import dpdata
+import textwrap
+import unittest
 from pathlib import Path
-from dpgen2.conf.file_conf import (
-    FileConfGenerator,
-)
+
+import dpdata
+import numpy as np
+
+from dpgen2.conf.file_conf import FileConfGenerator
+
+from .context import dpgen2
 
 pos0 = textwrap.dedent(
     """POSCAR file written by OVITO

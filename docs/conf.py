@@ -14,7 +14,6 @@ import os
 import sys
 from datetime import date
 
-
 # -- Project information -----------------------------------------------------
 
 project = "DPGEN2"

@@ -1,16 +1,13 @@
-import argparse, os, json, logging
-from dflow import (
-    Workflow,
-)
-from typing import (
-    Optional,
-)
-from dpgen2.entrypoint.args import (
-    normalize as normalize_args,
-)
-from dpgen2.entrypoint.common import (
-    global_config_workflow,
-)
+import argparse
+import json
+import logging
+import os
+from typing import Optional
+
+from dflow import Workflow
+
+from dpgen2.entrypoint.args import normalize as normalize_args
+from dpgen2.entrypoint.common import global_config_workflow
 
 workflow_subcommands = [
     "terminate",

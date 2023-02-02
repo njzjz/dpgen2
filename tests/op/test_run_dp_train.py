@@ -1,22 +1,17 @@
-from op.context import dpgen2
-import numpy as np
-import unittest, json, shutil, os
+import json
+import os
+import shutil
+import unittest
 from pathlib import Path
+
+import numpy as np
+from dflow.python import OP, OPIO, Artifact, FatalError, OPIOSign, TransientError
+from fake_data_set import fake_multi_sys, fake_system
+from mock import call, patch
+from op.context import dpgen2
+
+from dpgen2.constants import train_script_name, train_task_pattern
 from dpgen2.op.run_dp_train import RunDPTrain
-from fake_data_set import fake_system, fake_multi_sys
-from dpgen2.constants import (
-    train_task_pattern,
-    train_script_name,
-)
-from mock import patch, call
-from dflow.python import (
-    OP,
-    OPIO,
-    OPIOSign,
-    Artifact,
-    TransientError,
-    FatalError,
-)
 
 
 class TestRunDPTrain(unittest.TestCase):

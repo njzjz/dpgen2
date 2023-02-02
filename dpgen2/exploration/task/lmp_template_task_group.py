@@ -1,23 +1,19 @@
-import itertools, random
-from typing import (
-    List,
-    Optional,
-)
+import itertools
+import random
 from pathlib import Path
-from . import (
-    ExplorationTask,
-    ExplorationTaskGroup,
-    ConfSamplingTaskGroup,
-)
-from .lmp import make_lmp_input
+from typing import List, Optional
+
 from dpgen2.constants import (
     lmp_conf_name,
-    lmp_traj_name,
     lmp_input_name,
+    lmp_traj_name,
+    model_name_pattern,
     plm_input_name,
     plm_output_name,
-    model_name_pattern,
 )
+
+from . import ConfSamplingTaskGroup, ExplorationTask, ExplorationTaskGroup
+from .lmp import make_lmp_input
 
 
 class LmpTemplateTaskGroup(ConfSamplingTaskGroup):
