@@ -56,7 +56,7 @@ from context import (
 from dflow.python import (
     FatalError,
 )
-from mocked_ops import (
+from .mocked_ops import (
     MockedCollectData,
     MockedCollectDataFailed,
     MockedCollectDataRestart,

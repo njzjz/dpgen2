@@ -44,7 +44,7 @@ try:
 except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
-from mocked_ops import (
+from .mocked_ops import (
     MockedConfSelector,
     MockedExplorationReport,
     MockedSelectConfs,

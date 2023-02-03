@@ -52,7 +52,7 @@ from context import (
     skip_ut_with_dflow_reason,
     upload_python_packages,
 )
-from mocked_ops import (
+from .mocked_ops import (
     MockedCollectData,
     MockedConfSelector,
     MockedExplorationReport,
@@ -110,7 +110,7 @@ from dpgen2.utils import (
 )
 from dpgen2.utils.step_config import normalize as normalize_step_dict
 
-from ..mock import (
+from .mock import (
     patch,
 )
 

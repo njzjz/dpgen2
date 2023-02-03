@@ -10,7 +10,7 @@ from pathlib import (
 
 import dpdata
 import numpy as np
-from mocked_ops import (
+from ..mocked_ops import (
     MockedExplorationReport,
     MockedExplorationTaskGroup,
     MockedExplorationTaskGroup1,

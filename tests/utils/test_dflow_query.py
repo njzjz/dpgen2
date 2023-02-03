@@ -21,7 +21,7 @@ except ModuleNotFoundError:
 from dflow.python import (
     FatalError,
 )
-from mocked_ops import (
+from ..mocked_ops import (
     MockedExplorationReport,
     MockedExplorationTaskGroup,
     MockedExplorationTaskGroup1,
