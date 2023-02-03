@@ -13,6 +13,11 @@ from dflow.python import (
     OPIOSign,
     TransientError,
 )
+from mock import (
+    call,
+    mock,
+    patch,
+)
 from op.context import (
     dpgen2,
 )
@@ -30,12 +35,6 @@ from dpgen2.op.run_lmp import (
 )
 from dpgen2.utils import (
     BinaryFileInput,
-)
-
-from mock import (
-    call,
-    mock,
-    patch,
 )
 
 
