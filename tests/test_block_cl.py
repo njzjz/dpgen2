@@ -55,6 +55,24 @@ from context import (
 from mock import (
     patch,
 )
+from mocked_ops import (
+    MockedCollectData,
+    MockedConfSelector,
+    MockedExplorationReport,
+    MockedExplorationTaskGroup,
+    MockedPrepDPTrain,
+    MockedPrepVasp,
+    MockedRunDPTrain,
+    MockedRunLmp,
+    MockedRunVasp,
+    MockedSelectConfs,
+    make_mocked_init_data,
+    make_mocked_init_models,
+    mocked_incar_template,
+    mocked_numb_models,
+    mocked_numb_select,
+    mocked_template_script,
+)
 
 from dpgen2.constants import (
     fp_task_pattern,
@@ -94,25 +112,6 @@ from dpgen2.utils import (
     load_object_from_file,
 )
 from dpgen2.utils.step_config import normalize as normalize_step_dict
-
-from mocked_ops import (
-    MockedCollectData,
-    MockedConfSelector,
-    MockedExplorationReport,
-    MockedExplorationTaskGroup,
-    MockedPrepDPTrain,
-    MockedPrepVasp,
-    MockedRunDPTrain,
-    MockedRunLmp,
-    MockedRunVasp,
-    MockedSelectConfs,
-    make_mocked_init_data,
-    make_mocked_init_models,
-    mocked_incar_template,
-    mocked_numb_models,
-    mocked_numb_select,
-    mocked_template_script,
-)
 
 default_config = normalize_step_dict(
     {
