@@ -3,10 +3,10 @@ import unittest
 
 import dpdata
 import numpy as np
-from fake_data_set import (
+from ..fake_data_set import (
     fake_system,
 )
-from mock import (
+from ..mock import (
     patch,
 )
 

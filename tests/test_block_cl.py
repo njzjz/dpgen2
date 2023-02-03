@@ -52,7 +52,7 @@ from context import (
     skip_ut_with_dflow_reason,
     upload_python_packages,
 )
-from mock import (
+from ..mock import (
     patch,
 )
 from mocked_ops import (

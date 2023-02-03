@@ -12,7 +12,7 @@ from dflow.python import (
     Artifact,
     OPIOSign,
 )
-from mock import (
+from ..mock import (
     mock,
 )
 from op.context import (

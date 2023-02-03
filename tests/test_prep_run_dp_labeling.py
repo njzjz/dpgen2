@@ -14,7 +14,7 @@ from dargs import (
 from dflow.python import (
     FatalError,
 )
-from mock import (
+from ..mock import (
     Mock,
     patch,
 )
