@@ -15,7 +15,7 @@ from dpgen2.exploration.task import (
     ExplorationTaskGroup,
 )
 
-from . import (
+from .task import (
     ExplorationTask,
     ExplorationTaskGroup,
 )
