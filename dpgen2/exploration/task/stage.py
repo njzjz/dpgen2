@@ -11,9 +11,6 @@ from dpgen2.constants import (
     lmp_input_name,
     model_name_pattern,
 )
-from dpgen2.exploration.task import (
-    ExplorationTaskGroup,
-)
 
 from .task import (
     ExplorationTask,
