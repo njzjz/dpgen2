@@ -22,13 +22,13 @@ class ConfGenerator(ABC):
 
         Parameters
         ----------
-        type_map: List[str]
-                The type map.
+        type_map : List[str]
+            The type map.
 
         Returns
         -------
         confs:  dpdata.MultiSystems
-                The returned configurations in `dpdata.MultiSystems` format
+            The returned configurations in `dpdata.MultiSystems` format
 
         """
         pass
@@ -42,13 +42,13 @@ class ConfGenerator(ABC):
 
         Parameters
         ----------
-        type_map: List[str]
-                The type map.
+        type_map : List[str]
+            The type map.
 
         Returns
         -------
         conf_list: List[str]
-                A list of file content of configurations.
+            A list of file content of configurations.
 
         """
         ret = []
@@ -77,9 +77,9 @@ class ConfGenerator(ABC):
 
         Parameters
         ----------
-        data: Dict
+        data : Dict
             The input dict of arguments.
-        strict: bool
+        strict : bool
             Strictly check the arguments.
 
         Returns

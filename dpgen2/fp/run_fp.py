@@ -83,7 +83,7 @@ class RunFp(OP, ABC):
 
         Parameters
         ----------
-        kwargs
+        **kwargs
             Keyword args defined by the developer.
             The fp/run_config session of the input file will be passed to this function.
 
@@ -114,9 +114,9 @@ class RunFp(OP, ABC):
 
         Parameters
         ----------
-        data: Dict
+        data : Dict
             The input dict of arguments.
-        strict: bool
+        strict : bool
             Strictly check the arguments.
 
         Returns
@@ -149,13 +149,12 @@ class RunFp(OP, ABC):
 
         Returns
         -------
-            Output dict with components:
+        Output dict with components:
+        - `log`: (`Artifact(Path)`) The log file of FP.
+        - `labeled_data`: (`Artifact(Path)`) The path to the labeled data in `"deepmd/npy"` format provided by `dpdata`.
 
-            - `log`: (`Artifact(Path)`) The log file of FP.
-            - `labeled_data`: (`Artifact(Path)`) The path to the labeled data in `"deepmd/npy"` format provided by `dpdata`.
-
-        Exceptions
-        ----------
+        Raises
+        ------
         TransientError
             On the failure of FP execution.
         FatalError

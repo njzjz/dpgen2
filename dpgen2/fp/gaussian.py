@@ -91,7 +91,7 @@ class PrepGaussian(PrepFp):
         ----------
         conf_frame : dpdata.System
             One frame of configuration in the dpdata format.
-        inputs: GaussianInputs
+        inputs : GaussianInputs
             The GaussianInputs object handels all other input files of the task.
         """
 
@@ -130,9 +130,9 @@ class RunGaussian(RunFp):
 
         Parameters
         ----------
-        command: str
+        command : str
             The command of running gaussian task
-        out: str
+        out : str
             The name of the output data file.
 
         Returns
