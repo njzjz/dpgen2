@@ -24,7 +24,7 @@ from dpgen2.op.prep_dp_train import (
     PrepDPTrain,
 )
 
-from ..mock import (
+from mock import (
     mock,
 )
 

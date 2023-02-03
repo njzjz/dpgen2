@@ -33,7 +33,7 @@ from ..fake_data_set import (
     fake_multi_sys,
     fake_system,
 )
-from ..mock import (
+from mock import (
     call,
     mock,
     patch,

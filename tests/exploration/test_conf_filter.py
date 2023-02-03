@@ -12,7 +12,7 @@ from dpgen2.exploration.selector import (
 from ..fake_data_set import (
     fake_system,
 )
-from ..mock import (
+from mock import (
     patch,
 )
 from .context import (

@@ -28,7 +28,7 @@ from dpgen2.fp.vasp import (
     vasp_pot_name,
 )
 
-from ..mock import (
+from mock import (
     call,
     mock,
     patch,
