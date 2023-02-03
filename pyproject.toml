@@ -66,3 +66,4 @@ include = [
 
 [tool.isort]
 profile = "black"
+force_grid_wrap = 1
