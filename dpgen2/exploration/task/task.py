@@ -1,7 +1,16 @@
 import os
-from abc import ABC, abstractmethod
-from collections.abc import Sequence
-from typing import Dict, List, Tuple
+from abc import (
+    ABC,
+    abstractmethod,
+)
+from collections.abc import (
+    Sequence,
+)
+from typing import (
+    Dict,
+    List,
+    Tuple,
+)
 
 
 class ExplorationTask:

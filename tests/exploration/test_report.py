@@ -1,13 +1,21 @@
 import os
 import textwrap
 import unittest
-from collections import Counter
+from collections import (
+    Counter,
+)
 
 import numpy as np
-from context import dpgen2
-from dargs import Argument
+from context import (
+    dpgen2,
+)
+from dargs import (
+    Argument,
+)
 
-from dpgen2.exploration.report import ExplorationReportTrustLevels
+from dpgen2.exploration.report import (
+    ExplorationReportTrustLevels,
+)
 
 
 class TestTrajsExplorationResport(unittest.TestCase):

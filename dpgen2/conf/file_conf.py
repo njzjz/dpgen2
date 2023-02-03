@@ -1,12 +1,24 @@
 import glob
 import os
-from pathlib import Path
-from typing import List, Optional, Tuple, Union
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Optional,
+    Tuple,
+    Union,
+)
 
 import dpdata
-from dargs import Argument, Variant
+from dargs import (
+    Argument,
+    Variant,
+)
 
-from .conf_generator import ConfGenerator
+from .conf_generator import (
+    ConfGenerator,
+)
 
 
 class FileConfGenerator(ConfGenerator):

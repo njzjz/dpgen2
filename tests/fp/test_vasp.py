@@ -5,14 +5,21 @@ import shutil
 import sys
 import textwrap
 import unittest
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import dpdata
 import numpy as np
 
-from dpgen2.fp.vasp import VaspInputs, make_kspacing_kpoints
+from dpgen2.fp.vasp import (
+    VaspInputs,
+    make_kspacing_kpoints,
+)
 
-from .context import dpgen2
+from .context import (
+    dpgen2,
+)
 
 
 class TestVASPInputs(unittest.TestCase):

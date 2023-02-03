@@ -5,14 +5,20 @@ import shutil
 import tempfile
 import textwrap
 import unittest
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import dpdata
 import numpy as np
 
-from dpgen2.conf.file_conf import FileConfGenerator
+from dpgen2.conf.file_conf import (
+    FileConfGenerator,
+)
 
-from .context import dpgen2
+from .context import (
+    dpgen2,
+)
 
 pos0 = textwrap.dedent(
     """POSCAR file written by OVITO

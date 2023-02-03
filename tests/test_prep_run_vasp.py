@@ -3,8 +3,13 @@ import os
 import shutil
 import time
 import unittest
-from pathlib import Path
-from typing import List, Set
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Set,
+)
 
 import jsonpickle
 import numpy as np
@@ -23,10 +28,18 @@ from dflow import (
     download_artifact,
     upload_artifact,
 )
-from dflow.python import OP, OPIO, Artifact, OPIOSign, PythonOPTemplate
+from dflow.python import (
+    OP,
+    OPIO,
+    Artifact,
+    OPIOSign,
+    PythonOPTemplate,
+)
 
 try:
-    from context import dpgen2
+    from context import (
+        dpgen2,
+    )
 except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
@@ -37,11 +50,24 @@ from context import (
     skip_ut_with_dflow_reason,
     upload_python_packages,
 )
-from mocked_ops import MockedPrepVasp, MockedRunVasp, mocked_incar_template
+from mocked_ops import (
+    MockedPrepVasp,
+    MockedRunVasp,
+    mocked_incar_template,
+)
 
-from dpgen2.constants import fp_task_pattern
-from dpgen2.fp.vasp import VaspInputs, vasp_conf_name, vasp_input_name, vasp_pot_name
-from dpgen2.superop.prep_run_fp import PrepRunFp
+from dpgen2.constants import (
+    fp_task_pattern,
+)
+from dpgen2.fp.vasp import (
+    VaspInputs,
+    vasp_conf_name,
+    vasp_input_name,
+    vasp_pot_name,
+)
+from dpgen2.superop.prep_run_fp import (
+    PrepRunFp,
+)
 from dpgen2.utils.step_config import normalize as normalize_step_dict
 
 default_config = normalize_step_dict(

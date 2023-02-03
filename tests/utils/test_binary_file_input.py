@@ -1,11 +1,15 @@
 import pickle
 import shutil
 import unittest
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import numpy as np
 
-from dpgen2.utils import BinaryFileInput
+from dpgen2.utils import (
+    BinaryFileInput,
+)
 
 
 class TestBinaryFileInput(unittest.TestCase):

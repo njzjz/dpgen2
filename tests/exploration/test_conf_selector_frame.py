@@ -2,15 +2,25 @@ import os
 import shutil
 import textwrap
 import unittest
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import dpdata
 import numpy as np
-from context import dpgen2
+from context import (
+    dpgen2,
+)
 
-from dpgen2.exploration.render import TrajRenderLammps
-from dpgen2.exploration.report import ExplorationReportTrustLevels
-from dpgen2.exploration.selector import ConfSelectorFrames
+from dpgen2.exploration.render import (
+    TrajRenderLammps,
+)
+from dpgen2.exploration.report import (
+    ExplorationReportTrustLevels,
+)
+from dpgen2.exploration.selector import (
+    ConfSelectorFrames,
+)
 
 
 class TestConfSelectorFrames(unittest.TestCase):

@@ -2,20 +2,37 @@ import itertools
 import os
 import textwrap
 import unittest
-from pathlib import Path
-from typing import List, Set
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Set,
+)
 
 import numpy as np
 
 try:
-    from exploration.context import dpgen2
+    from exploration.context import (
+        dpgen2,
+    )
 except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
-from unittest.mock import Mock, patch
+from unittest.mock import (
+    Mock,
+    patch,
+)
 
-from dpgen2.constants import lmp_conf_name, lmp_input_name, plm_input_name
-from dpgen2.exploration.task import ExplorationStage, LmpTemplateTaskGroup
+from dpgen2.constants import (
+    lmp_conf_name,
+    lmp_input_name,
+    plm_input_name,
+)
+from dpgen2.exploration.task import (
+    ExplorationStage,
+    LmpTemplateTaskGroup,
+)
 
 in_lmp_template = textwrap.dedent(
     """variable        NSTEPS          equal V_NSTEPS

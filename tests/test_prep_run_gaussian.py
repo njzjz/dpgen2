@@ -1,10 +1,14 @@
 import os
 import shutil
 import unittest
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import numpy as np
-from dargs import Argument
+from dargs import (
+    Argument,
+)
 
 from dpgen2.fp.gaussian import (
     GaussianInputs,

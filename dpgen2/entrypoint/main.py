@@ -2,15 +2,32 @@ import argparse
 import json
 import logging
 import os
-from typing import List, Optional
+from typing import (
+    List,
+    Optional,
+)
 
-from dflow import Step, Steps, Workflow, download_artifact, upload_artifact
+from dflow import (
+    Step,
+    Steps,
+    Workflow,
+    download_artifact,
+    upload_artifact,
+)
 
-from dpgen2 import __version__
+from dpgen2 import (
+    __version__,
+)
 
-from .download import download
-from .showkey import showkey
-from .status import status
+from .download import (
+    download,
+)
+from .showkey import (
+    showkey,
+)
+from .status import (
+    status,
+)
 from .submit import (
     make_concurrent_learning_op,
     make_naive_exploration_scheduler,
@@ -18,7 +35,10 @@ from .submit import (
     submit_concurrent_learning,
     workflow_concurrent_learning,
 )
-from .watch import default_watching_keys, watch
+from .watch import (
+    default_watching_keys,
+    watch,
+)
 from .workflow import (
     add_subparser_workflow_subcommand,
     execute_workflow_subcommand,

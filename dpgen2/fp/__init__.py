@@ -1,6 +1,18 @@
-from .deepmd import DeepmdInputs, PrepDeepmd, RunDeepmd
-from .gaussian import GaussianInputs, PrepGaussian, RunGaussian
-from .vasp import PrepVasp, RunVasp, VaspInputs
+from .deepmd import (
+    DeepmdInputs,
+    PrepDeepmd,
+    RunDeepmd,
+)
+from .gaussian import (
+    GaussianInputs,
+    PrepGaussian,
+    RunGaussian,
+)
+from .vasp import (
+    PrepVasp,
+    RunVasp,
+    VaspInputs,
+)
 
 fp_styles = {
     "vasp": {

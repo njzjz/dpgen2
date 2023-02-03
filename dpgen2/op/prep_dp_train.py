@@ -1,12 +1,26 @@
 import json
 import random
 import sys
-from pathlib import Path
-from typing import List, Tuple, Union
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Tuple,
+    Union,
+)
 
-from dflow.python import OP, OPIO, Artifact, OPIOSign
+from dflow.python import (
+    OP,
+    OPIO,
+    Artifact,
+    OPIOSign,
+)
 
-from dpgen2.constants import train_script_name, train_task_pattern
+from dpgen2.constants import (
+    train_script_name,
+    train_task_pattern,
+)
 
 
 class PrepDPTrain(OP):

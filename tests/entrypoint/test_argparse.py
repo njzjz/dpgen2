@@ -3,7 +3,11 @@ import os
 import shutil
 import unittest
 
-from dpgen2.entrypoint.main import main_parser, parse_args, workflow_subcommands
+from dpgen2.entrypoint.main import (
+    main_parser,
+    parse_args,
+    workflow_subcommands,
+)
 
 
 class ParserTest(unittest.TestCase):

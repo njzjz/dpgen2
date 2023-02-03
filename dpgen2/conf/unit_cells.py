@@ -1,5 +1,7 @@
 import tempfile
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import dpdata
 import numpy as np

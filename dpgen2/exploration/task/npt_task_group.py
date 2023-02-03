@@ -1,11 +1,24 @@
 import itertools
 import random
-from typing import List, Optional
+from typing import (
+    List,
+    Optional,
+)
 
-from dpgen2.constants import lmp_conf_name, lmp_input_name, model_name_pattern
+from dpgen2.constants import (
+    lmp_conf_name,
+    lmp_input_name,
+    model_name_pattern,
+)
 
-from . import ConfSamplingTaskGroup, ExplorationTask, ExplorationTaskGroup
-from .lmp import make_lmp_input
+from . import (
+    ConfSamplingTaskGroup,
+    ExplorationTask,
+    ExplorationTaskGroup,
+)
+from .lmp import (
+    make_lmp_input,
+)
 
 
 class NPTTaskGroup(ConfSamplingTaskGroup):

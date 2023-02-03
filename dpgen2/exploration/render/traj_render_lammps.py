@@ -1,13 +1,25 @@
-from pathlib import Path
-from typing import TYPE_CHECKING, List, Optional, Tuple, Union
+from pathlib import (
+    Path,
+)
+from typing import (
+    TYPE_CHECKING,
+    List,
+    Optional,
+    Tuple,
+    Union,
+)
 
 import dpdata
 import numpy as np
 
-from .traj_render import TrajRender
+from .traj_render import (
+    TrajRender,
+)
 
 if TYPE_CHECKING:
-    from dpgen2.exploration.selector import ConfFilters
+    from dpgen2.exploration.selector import (
+        ConfFilters,
+    )
 
 
 class TrajRenderLammps(TrajRender):

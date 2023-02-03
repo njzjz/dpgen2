@@ -4,17 +4,28 @@ import random
 import shutil
 import tempfile
 import unittest
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import dflow
 import dpdata
 import numpy as np
 import pytest
-from dflow import config, s3_config
-from dflow.plugins import bohrium
-from utils.context import dpgen2
+from dflow import (
+    config,
+    s3_config,
+)
+from dflow.plugins import (
+    bohrium,
+)
+from utils.context import (
+    dpgen2,
+)
 
-from dpgen2.utils import bohrium_config_from_dict
+from dpgen2.utils import (
+    bohrium_config_from_dict,
+)
 
 
 @pytest.mark.server(

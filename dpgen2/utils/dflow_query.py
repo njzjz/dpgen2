@@ -1,5 +1,9 @@
 import re
-from typing import Any, List, Optional
+from typing import (
+    Any,
+    List,
+    Optional,
+)
 
 import numpy as np
 

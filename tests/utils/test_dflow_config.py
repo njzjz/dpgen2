@@ -4,14 +4,24 @@ import random
 import shutil
 import tempfile
 import unittest
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import dpdata
 import numpy as np
-from dflow import config, s3_config
-from utils.context import dpgen2
+from dflow import (
+    config,
+    s3_config,
+)
+from utils.context import (
+    dpgen2,
+)
 
-from dpgen2.utils import dflow_config, dflow_s3_config
+from dpgen2.utils import (
+    dflow_config,
+    dflow_s3_config,
+)
 
 
 class TestDflowConfig(unittest.TestCase):

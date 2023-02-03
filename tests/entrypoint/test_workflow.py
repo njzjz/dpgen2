@@ -6,9 +6,13 @@ import unittest
 
 import dflow
 import mock
-from dflow import Workflow
+from dflow import (
+    Workflow,
+)
 
-from dpgen2.entrypoint.workflow import execute_workflow_subcommand
+from dpgen2.entrypoint.workflow import (
+    execute_workflow_subcommand,
+)
 
 
 class ParserTest(unittest.TestCase):

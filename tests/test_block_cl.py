@@ -4,8 +4,13 @@ import pickle
 import shutil
 import time
 import unittest
-from pathlib import Path
-from typing import List, Set
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Set,
+)
 
 import jsonpickle
 import numpy as np
@@ -24,10 +29,19 @@ from dflow import (
     download_artifact,
     upload_artifact,
 )
-from dflow.python import OP, OPIO, Artifact, OPIOSign, PythonOPTemplate, upload_packages
+from dflow.python import (
+    OP,
+    OPIO,
+    Artifact,
+    OPIOSign,
+    PythonOPTemplate,
+    upload_packages,
+)
 
 try:
-    from context import dpgen2
+    from context import (
+        dpgen2,
+    )
 except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
@@ -38,7 +52,9 @@ from context import (
     skip_ut_with_dflow_reason,
     upload_python_packages,
 )
-from mock import patch
+from mock import (
+    patch,
+)
 from mocked_ops import (
     MockedCollectData,
     MockedConfSelector,
@@ -69,14 +85,32 @@ from dpgen2.constants import (
     train_script_name,
     train_task_pattern,
 )
-from dpgen2.exploration.task import ExplorationTask, ExplorationTaskGroup
-from dpgen2.fp.vasp import VaspInputs
-from dpgen2.op.prep_lmp import PrepLmp
-from dpgen2.superop.block import ConcurrentLearningBlock
-from dpgen2.superop.prep_run_dp_train import PrepRunDPTrain
-from dpgen2.superop.prep_run_fp import PrepRunFp
-from dpgen2.superop.prep_run_lmp import PrepRunLmp
-from dpgen2.utils import dump_object_to_file, load_object_from_file
+from dpgen2.exploration.task import (
+    ExplorationTask,
+    ExplorationTaskGroup,
+)
+from dpgen2.fp.vasp import (
+    VaspInputs,
+)
+from dpgen2.op.prep_lmp import (
+    PrepLmp,
+)
+from dpgen2.superop.block import (
+    ConcurrentLearningBlock,
+)
+from dpgen2.superop.prep_run_dp_train import (
+    PrepRunDPTrain,
+)
+from dpgen2.superop.prep_run_fp import (
+    PrepRunFp,
+)
+from dpgen2.superop.prep_run_lmp import (
+    PrepRunLmp,
+)
+from dpgen2.utils import (
+    dump_object_to_file,
+    load_object_from_file,
+)
 from dpgen2.utils.step_config import normalize as normalize_step_dict
 
 default_config = normalize_step_dict(

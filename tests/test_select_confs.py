@@ -3,8 +3,14 @@ import os
 import shutil
 import time
 import unittest
-from pathlib import Path
-from typing import List, Set, Tuple
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Set,
+    Tuple,
+)
 
 import jsonpickle
 import numpy as np
@@ -23,16 +29,30 @@ from dflow import (
     download_artifact,
     upload_artifact,
 )
-from dflow.python import OP, OPIO, Artifact, OPIOSign, PythonOPTemplate
+from dflow.python import (
+    OP,
+    OPIO,
+    Artifact,
+    OPIOSign,
+    PythonOPTemplate,
+)
 
 try:
-    from context import dpgen2
+    from context import (
+        dpgen2,
+    )
 except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
-from mocked_ops import MockedConfSelector, MockedExplorationReport, MockedSelectConfs
+from mocked_ops import (
+    MockedConfSelector,
+    MockedExplorationReport,
+    MockedSelectConfs,
+)
 
-from dpgen2.op.select_confs import SelectConfs
+from dpgen2.op.select_confs import (
+    SelectConfs,
+)
 
 
 class TestMockedSelectConfs(unittest.TestCase):

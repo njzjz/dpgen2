@@ -1,8 +1,18 @@
 import json
 import os
-from abc import ABC, abstractmethod
-from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from abc import (
+    ABC,
+    abstractmethod,
+)
+from pathlib import (
+    Path,
+)
+from typing import (
+    Dict,
+    List,
+    Set,
+    Tuple,
+)
 
 import dargs
 import dpdata
@@ -16,7 +26,9 @@ from dflow.python import (
     TransientError,
 )
 
-from dpgen2.utils.chdir import set_directory
+from dpgen2.utils.chdir import (
+    set_directory,
+)
 
 
 class RunFp(OP, ABC):

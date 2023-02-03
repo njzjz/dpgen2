@@ -1,12 +1,28 @@
 import json
 import os
-from pathlib import Path
-from typing import List, Set, Tuple
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Set,
+    Tuple,
+)
 
-from dflow.python import OP, OPIO, Artifact, BigParameter, OPIOSign
+from dflow.python import (
+    OP,
+    OPIO,
+    Artifact,
+    BigParameter,
+    OPIOSign,
+)
 
-from dpgen2.exploration.report import ExplorationReport
-from dpgen2.exploration.selector import ConfSelector
+from dpgen2.exploration.report import (
+    ExplorationReport,
+)
+from dpgen2.exploration.selector import (
+    ConfSelector,
+)
 
 
 class SelectConfs(OP):

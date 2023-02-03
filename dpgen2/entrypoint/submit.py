@@ -3,8 +3,15 @@ import glob
 import logging
 import os
 import pickle
-from pathlib import Path
-from typing import Dict, List, Optional, Union
+from pathlib import (
+    Path,
+)
+from typing import (
+    Dict,
+    List,
+    Optional,
+    Union,
+)
 
 import dpdata
 from dflow import (
@@ -33,17 +40,33 @@ from dflow.python import (
     upload_packages,
 )
 
-from dpgen2.conf import conf_styles
-from dpgen2.constants import default_host, default_image
+from dpgen2.conf import (
+    conf_styles,
+)
+from dpgen2.constants import (
+    default_host,
+    default_image,
+)
 from dpgen2.entrypoint.args import normalize as normalize_args
-from dpgen2.entrypoint.common import expand_idx, expand_sys_str, global_config_workflow
-from dpgen2.exploration.render import TrajRenderLammps
-from dpgen2.exploration.report import ExplorationReportTrustLevels, conv_styles
+from dpgen2.entrypoint.common import (
+    expand_idx,
+    expand_sys_str,
+    global_config_workflow,
+)
+from dpgen2.exploration.render import (
+    TrajRenderLammps,
+)
+from dpgen2.exploration.report import (
+    ExplorationReportTrustLevels,
+    conv_styles,
+)
 from dpgen2.exploration.scheduler import (
     ConvergenceCheckStageScheduler,
     ExplorationScheduler,
 )
-from dpgen2.exploration.selector import ConfSelectorFrames
+from dpgen2.exploration.selector import (
+    ConfSelectorFrames,
+)
 from dpgen2.exploration.task import (
     ExplorationStage,
     ExplorationTask,
@@ -51,9 +74,20 @@ from dpgen2.exploration.task import (
     NPTTaskGroup,
     make_task_group_from_config,
 )
-from dpgen2.flow import ConcurrentLearning
-from dpgen2.fp import fp_styles
-from dpgen2.op import CollectData, PrepDPTrain, PrepLmp, RunDPTrain, RunLmp, SelectConfs
+from dpgen2.flow import (
+    ConcurrentLearning,
+)
+from dpgen2.fp import (
+    fp_styles,
+)
+from dpgen2.op import (
+    CollectData,
+    PrepDPTrain,
+    PrepLmp,
+    RunDPTrain,
+    RunLmp,
+    SelectConfs,
+)
 from dpgen2.superop import (
     ConcurrentLearningBlock,
     PrepRunDPTrain,

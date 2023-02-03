@@ -3,8 +3,13 @@ import os
 import shutil
 import time
 import unittest
-from pathlib import Path
-from typing import List, Set
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Set,
+)
 
 import numpy as np
 from dflow import (
@@ -22,10 +27,18 @@ from dflow import (
     download_artifact,
     upload_artifact,
 )
-from dflow.python import OP, OPIO, Artifact, OPIOSign, PythonOPTemplate
+from dflow.python import (
+    OP,
+    OPIO,
+    Artifact,
+    OPIOSign,
+    PythonOPTemplate,
+)
 
 try:
-    from context import dpgen2
+    from context import (
+        dpgen2,
+    )
 except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
@@ -46,8 +59,12 @@ from mocked_ops import (
     mocked_template_script,
 )
 
-from dpgen2.constants import train_task_pattern
-from dpgen2.superop.prep_run_dp_train import PrepRunDPTrain
+from dpgen2.constants import (
+    train_task_pattern,
+)
+from dpgen2.superop.prep_run_dp_train import (
+    PrepRunDPTrain,
+)
 from dpgen2.utils.step_config import normalize as normalize_step_dict
 
 default_config = normalize_step_dict(

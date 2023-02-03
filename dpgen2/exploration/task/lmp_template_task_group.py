@@ -1,7 +1,12 @@
 import itertools
 import random
-from pathlib import Path
-from typing import List, Optional
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Optional,
+)
 
 from dpgen2.constants import (
     lmp_conf_name,
@@ -12,8 +17,14 @@ from dpgen2.constants import (
     plm_output_name,
 )
 
-from . import ConfSamplingTaskGroup, ExplorationTask, ExplorationTaskGroup
-from .lmp import make_lmp_input
+from . import (
+    ConfSamplingTaskGroup,
+    ExplorationTask,
+    ExplorationTaskGroup,
+)
+from .lmp import (
+    make_lmp_input,
+)
 
 
 class LmpTemplateTaskGroup(ConfSamplingTaskGroup):

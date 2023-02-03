@@ -1,10 +1,21 @@
 import json
 import os
-from pathlib import Path
-from typing import List, Set, Tuple
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Set,
+    Tuple,
+)
 
 import dpdata
-from dflow.python import OP, OPIO, Artifact, OPIOSign
+from dflow.python import (
+    OP,
+    OPIO,
+    Artifact,
+    OPIOSign,
+)
 
 
 class CollectData(OP):

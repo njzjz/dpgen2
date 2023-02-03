@@ -1,14 +1,31 @@
 import json
 import shutil
 import unittest
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import dpdata
 import numpy as np
-from dflow.python import OP, OPIO, Artifact, OPIOSign, TransientError
-from fake_data_set import fake_multi_sys, fake_system
-from mock import call, mock, patch
-from op.context import dpgen2
+from dflow.python import (
+    OP,
+    OPIO,
+    Artifact,
+    OPIOSign,
+    TransientError,
+)
+from fake_data_set import (
+    fake_multi_sys,
+    fake_system,
+)
+from mock import (
+    call,
+    mock,
+    patch,
+)
+from op.context import (
+    dpgen2,
+)
 
 from dpgen2.constants import (
     lmp_conf_name,
@@ -17,7 +34,9 @@ from dpgen2.constants import (
     lmp_model_devi_name,
     lmp_traj_name,
 )
-from dpgen2.op.collect_data import CollectData
+from dpgen2.op.collect_data import (
+    CollectData,
+)
 
 
 class TestRunLmp(unittest.TestCase):

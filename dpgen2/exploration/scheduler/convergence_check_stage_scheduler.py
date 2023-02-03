@@ -1,13 +1,30 @@
-from pathlib import Path
-from typing import List, Optional, Tuple
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Optional,
+    Tuple,
+)
 
-from dflow.python import FatalError
+from dflow.python import (
+    FatalError,
+)
 
-from dpgen2.exploration.report import ExplorationReport
-from dpgen2.exploration.selector import ConfSelector
-from dpgen2.exploration.task import ExplorationStage, ExplorationTaskGroup
+from dpgen2.exploration.report import (
+    ExplorationReport,
+)
+from dpgen2.exploration.selector import (
+    ConfSelector,
+)
+from dpgen2.exploration.task import (
+    ExplorationStage,
+    ExplorationTaskGroup,
+)
 
-from . import StageScheduler
+from . import (
+    StageScheduler,
+)
 
 
 class ConvergenceCheckStageScheduler(StageScheduler):

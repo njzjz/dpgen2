@@ -1,15 +1,35 @@
 import dargs
-from dargs import Argument, Variant
-from dflow.plugins.lebesgue import LebesgueExecutor
+from dargs import (
+    Argument,
+    Variant,
+)
+from dflow.plugins.lebesgue import (
+    LebesgueExecutor,
+)
 
 import dpgen2
-from dpgen2.conf import conf_styles
-from dpgen2.constants import default_image
-from dpgen2.exploration.report import conv_styles
-from dpgen2.fp import fp_styles
-from dpgen2.op.run_dp_train import RunDPTrain
-from dpgen2.op.run_lmp import RunLmp
-from dpgen2.utils import normalize_step_dict, step_conf_args
+from dpgen2.conf import (
+    conf_styles,
+)
+from dpgen2.constants import (
+    default_image,
+)
+from dpgen2.exploration.report import (
+    conv_styles,
+)
+from dpgen2.fp import (
+    fp_styles,
+)
+from dpgen2.op.run_dp_train import (
+    RunDPTrain,
+)
+from dpgen2.op.run_lmp import (
+    RunLmp,
+)
+from dpgen2.utils import (
+    normalize_step_dict,
+    step_conf_args,
+)
 
 
 def dp_dist_train_args():

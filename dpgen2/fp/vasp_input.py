@@ -1,9 +1,23 @@
-from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple, Union
+from pathlib import (
+    Path,
+)
+from typing import (
+    Dict,
+    List,
+    Optional,
+    Set,
+    Tuple,
+    Union,
+)
 
 import dpdata
 import numpy as np
-from dargs import Argument, ArgumentEncoder, Variant, dargs
+from dargs import (
+    Argument,
+    ArgumentEncoder,
+    Variant,
+    dargs,
+)
 
 
 class VaspInputs:

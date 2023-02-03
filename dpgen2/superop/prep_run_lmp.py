@@ -1,7 +1,15 @@
 import os
-from copy import deepcopy
-from pathlib import Path
-from typing import List, Optional, Set
+from copy import (
+    deepcopy,
+)
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Optional,
+    Set,
+)
 
 from dflow import (
     InputArtifact,
@@ -19,10 +27,21 @@ from dflow import (
     download_artifact,
     upload_artifact,
 )
-from dflow.python import OP, OPIO, Artifact, OPIOSign, PythonOPTemplate, Slices
+from dflow.python import (
+    OP,
+    OPIO,
+    Artifact,
+    OPIOSign,
+    PythonOPTemplate,
+    Slices,
+)
 
-from dpgen2.constants import lmp_index_pattern
-from dpgen2.utils.step_config import init_executor
+from dpgen2.constants import (
+    lmp_index_pattern,
+)
+from dpgen2.utils.step_config import (
+    init_executor,
+)
 from dpgen2.utils.step_config import normalize as normalize_step_dict
 
 

@@ -1,12 +1,19 @@
 import random
-from typing import List, Optional
+from typing import (
+    List,
+    Optional,
+)
 
 import dpdata
 import numpy as np
 import scipy.constants as pc
-from packaging.version import Version
+from packaging.version import (
+    Version,
+)
 
-from dpgen2.constants import lmp_traj_name
+from dpgen2.constants import (
+    lmp_traj_name,
+)
 
 
 def _sample_sphere():

@@ -3,12 +3,21 @@ import unittest
 
 import dpdata
 import numpy as np
-from fake_data_set import fake_system
-from mock import patch
+from fake_data_set import (
+    fake_system,
+)
+from mock import (
+    patch,
+)
 
-from dpgen2.exploration.selector import ConfFilter, ConfFilters
+from dpgen2.exploration.selector import (
+    ConfFilter,
+    ConfFilters,
+)
 
-from .context import dpgen2
+from .context import (
+    dpgen2,
+)
 
 
 class FooFilter(ConfFilter):

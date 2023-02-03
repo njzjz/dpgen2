@@ -4,7 +4,9 @@ import random
 import shutil
 import tempfile
 import unittest
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import dpdata
 import numpy as np
@@ -22,16 +24,28 @@ from dpgen2.entrypoint.submit import (
     print_list_steps,
     update_reuse_step_scheduler,
 )
-from dpgen2.exploration.render import TrajRenderLammps
-from dpgen2.exploration.report import ExplorationReport, ExplorationReportTrustLevels
+from dpgen2.exploration.render import (
+    TrajRenderLammps,
+)
+from dpgen2.exploration.report import (
+    ExplorationReport,
+    ExplorationReportTrustLevels,
+)
 from dpgen2.exploration.scheduler import (
     ConvergenceCheckStageScheduler,
     ExplorationScheduler,
 )
-from dpgen2.exploration.selector import ConfSelectorFrames
-from dpgen2.exploration.task import ExplorationStage, ExplorationTaskGroup
+from dpgen2.exploration.selector import (
+    ConfSelectorFrames,
+)
+from dpgen2.exploration.task import (
+    ExplorationStage,
+    ExplorationTaskGroup,
+)
 
-from .context import dpgen2
+from .context import (
+    dpgen2,
+)
 
 ifc0 = """Al1 
 1.0

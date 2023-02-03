@@ -2,13 +2,20 @@ import itertools
 import os
 import textwrap
 import unittest
-from pathlib import Path
-from typing import List, Set
+from pathlib import (
+    Path,
+)
+from typing import (
+    List,
+    Set,
+)
 
 import numpy as np
 
 try:
-    from exploration.context import dpgen2
+    from exploration.context import (
+        dpgen2,
+    )
 except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
@@ -26,7 +33,9 @@ class TestMakeTaskGroupFromConfig(unittest.TestCase):
             "Ts": [100],
         }
         self.config_template = {"type": "lmp-template", "lmp_template_fname": "foo"}
-        from .test_lmp_templ_task_group import in_lmp_template
+        from .test_lmp_templ_task_group import (
+            in_lmp_template,
+        )
 
         Path(self.config_template["lmp_template_fname"]).write_text(in_lmp_template)
         self.mass_map = [1.0, 2.0]
