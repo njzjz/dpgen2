@@ -14,12 +14,12 @@ from dpgen2.constants import (
 from .conf_sampling_task_group import (
     ConfSamplingTaskGroup,
 )
+from .lmp import (
+    make_lmp_input,
+)
 from .task import (
     ExplorationTask,
     ExplorationTaskGroup,
-)
-from .lmp import (
-    make_lmp_input,
 )
 
 
