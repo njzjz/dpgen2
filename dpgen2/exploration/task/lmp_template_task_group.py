@@ -16,9 +16,10 @@ from dpgen2.constants import (
     plm_input_name,
     plm_output_name,
 )
-
-from . import (
+from .conf_sampling_task_group import (
     ConfSamplingTaskGroup,
+)
+from .task import (
     ExplorationTask,
     ExplorationTaskGroup,
 )
