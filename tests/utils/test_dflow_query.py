@@ -21,13 +21,6 @@ except ModuleNotFoundError:
 from dflow.python import (
     FatalError,
 )
-from ..mocked_ops import (
-    MockedExplorationReport,
-    MockedExplorationTaskGroup,
-    MockedExplorationTaskGroup1,
-    MockedStage,
-    MockedStage1,
-)
 
 from dpgen2.exploration.report import (
     ExplorationReport,
@@ -53,6 +46,14 @@ from dpgen2.utils.dflow_query import (
     matched_step_key,
     print_keys_in_nice_format,
     sort_slice_ops,
+)
+
+from ..mocked_ops import (
+    MockedExplorationReport,
+    MockedExplorationTaskGroup,
+    MockedExplorationTaskGroup1,
+    MockedStage,
+    MockedStage1,
 )
 
 dpgen_keys = [

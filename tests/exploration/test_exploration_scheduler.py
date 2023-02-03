@@ -21,13 +21,6 @@ except ModuleNotFoundError:
 from dflow.python import (
     FatalError,
 )
-from ..mocked_ops import (
-    MockedExplorationReport,
-    MockedExplorationTaskGroup,
-    MockedExplorationTaskGroup1,
-    MockedStage,
-    MockedStage1,
-)
 
 from dpgen2.exploration.render import (
     TrajRenderLammps,
@@ -46,6 +39,14 @@ from dpgen2.exploration.selector import (
 from dpgen2.exploration.task import (
     ExplorationStage,
     ExplorationTaskGroup,
+)
+
+from ..mocked_ops import (
+    MockedExplorationReport,
+    MockedExplorationTaskGroup,
+    MockedExplorationTaskGroup1,
+    MockedStage,
+    MockedStage1,
 )
 
 
