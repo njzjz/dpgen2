@@ -14,6 +14,10 @@ from dargs import (
 from dflow.python import (
     FatalError,
 )
+from mock import (
+    Mock,
+    patch,
+)
 
 from dpgen2.fp.deepmd import (
     PrepDeepmd,
@@ -24,11 +28,6 @@ from dpgen2.fp.deepmd import (
 )
 from dpgen2.utils import (
     BinaryFileInput,
-)
-
-from mock import (
-    Mock,
-    patch,
 )
 
 
