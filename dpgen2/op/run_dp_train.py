@@ -81,11 +81,12 @@ class RunDPTrain(OP):
 
         Returns
         -------
-        Output dict with components:
-        - `script`: (`Artifact(Path)`) The training script.
-        - `model`: (`Artifact(Path)`) The trained frozen model.
-        - `lcurve`: (`Artifact(Path)`) The learning curve file.
-        - `log`: (`Artifact(Path)`) The log file of training.
+        Any
+            Output dict with components:
+            - `script`: (`Artifact(Path)`) The training script.
+            - `model`: (`Artifact(Path)`) The trained frozen model.
+            - `lcurve`: (`Artifact(Path)`) The learning curve file.
+            - `log`: (`Artifact(Path)`) The log file of training.
 
         Raises
         ------

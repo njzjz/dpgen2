@@ -54,8 +54,9 @@ class CollectData(OP):
 
         Returns
         -------
-        Output dict with components:
-        - `iter_data`: (`Artifact(List[Path])`) The data paths of previous and the current iteration data.
+        Any
+            Output dict with components:
+            - `iter_data`: (`Artifact(List[Path])`) The data paths of previous and the current iteration data.
 
         """
         name = ip["name"]
