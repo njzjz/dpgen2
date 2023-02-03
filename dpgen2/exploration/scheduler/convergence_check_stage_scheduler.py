@@ -22,7 +22,7 @@ from dpgen2.exploration.task import (
     ExplorationTaskGroup,
 )
 
-from . import (
+from .stage_scheduler import (
     StageScheduler,
 )
 
