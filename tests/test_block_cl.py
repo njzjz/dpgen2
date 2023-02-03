@@ -92,7 +92,7 @@ from dpgen2.utils import (
 )
 from dpgen2.utils.step_config import normalize as normalize_step_dict
 
-from .mock import (
+from mock import (
     patch,
 )
 from .mocked_ops import (

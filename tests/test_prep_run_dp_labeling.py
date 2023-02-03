@@ -26,7 +26,7 @@ from dpgen2.utils import (
     BinaryFileInput,
 )
 
-from .mock import (
+from mock import (
     Mock,
     patch,
 )
