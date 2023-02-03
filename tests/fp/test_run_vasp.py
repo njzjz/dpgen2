@@ -13,11 +13,6 @@ from dflow.python import (
     OPIOSign,
     TransientError,
 )
-from ..mock import (
-    call,
-    mock,
-    patch,
-)
 
 from dpgen2.constants import (
     fp_default_log_name,
@@ -33,6 +28,11 @@ from dpgen2.fp.vasp import (
     vasp_pot_name,
 )
 
+from ..mock import (
+    call,
+    mock,
+    patch,
+)
 from .context import (
     dpgen2,
 )

@@ -12,9 +12,6 @@ from dflow.python import (
     Artifact,
     OPIOSign,
 )
-from ..mock import (
-    mock,
-)
 from op.context import (
     dpgen2,
 )
@@ -25,6 +22,10 @@ from dpgen2.constants import (
 )
 from dpgen2.op.prep_dp_train import (
     PrepDPTrain,
+)
+
+from ..mock import (
+    mock,
 )
 
 template_script_se_e2_a = {
