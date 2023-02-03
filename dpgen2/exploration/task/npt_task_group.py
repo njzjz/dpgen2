@@ -11,8 +11,10 @@ from dpgen2.constants import (
     model_name_pattern,
 )
 
-from . import (
+from .conf_sampling_task_group import (
     ConfSamplingTaskGroup,
+)
+from .task import (
     ExplorationTask,
     ExplorationTaskGroup,
 )
