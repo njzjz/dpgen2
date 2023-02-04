@@ -37,7 +37,9 @@ from dpgen2.exploration.task import (
 )
 
 # isort: off
-import entrypoint.context
+from .context import (
+    dpgen2,
+)
 from mocked_ops import (
     MockedExplorationReport,
     MockedExplorationTaskGroup,
@@ -47,9 +49,6 @@ from mocked_ops import (
 )
 
 # isort: on
-from .context import (
-    dpgen2,
-)
 
 ifc0 = """Al1 
 1.0
