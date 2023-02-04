@@ -48,7 +48,7 @@ from dpgen2.op.select_confs import (
     SelectConfs,
 )
 
-from .mocked_ops import (
+from mocked_ops import (
     MockedConfSelector,
     MockedExplorationReport,
     MockedSelectConfs,

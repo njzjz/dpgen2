@@ -47,14 +47,16 @@ from dpgen2.utils.dflow_query import (
     print_keys_in_nice_format,
     sort_slice_ops,
 )
-
-from ..mocked_ops import (
+# isort: off
+import utils.context
+from mocked_ops import (
     MockedExplorationReport,
     MockedExplorationTaskGroup,
     MockedExplorationTaskGroup1,
     MockedStage,
     MockedStage1,
 )
+# isort: on
 
 dpgen_keys = [
     "init--scheduler",

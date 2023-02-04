@@ -40,14 +40,16 @@ from dpgen2.exploration.task import (
     ExplorationStage,
     ExplorationTaskGroup,
 )
-
-from ..mocked_ops import (
+# isort: off
+import exploration.context
+from mocked_ops import (
     MockedExplorationReport,
     MockedExplorationTaskGroup,
     MockedExplorationTaskGroup1,
     MockedStage,
     MockedStage1,
 )
+# isort: on
 
 
 class TestConvergenceCheckStageScheduler(unittest.TestCase):

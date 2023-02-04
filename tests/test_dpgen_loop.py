@@ -105,7 +105,7 @@ from dpgen2.superop.prep_run_lmp import (
 )
 from dpgen2.utils.step_config import normalize as normalize_step_dict
 
-from .mocked_ops import (
+from mocked_ops import (
     MockedCollectData,
     MockedCollectDataFailed,
     MockedCollectDataRestart,
