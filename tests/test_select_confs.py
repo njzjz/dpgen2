@@ -44,14 +44,14 @@ try:
 except ModuleNotFoundError:
     # case of upload everything to argo, no context needed
     pass
-from dpgen2.op.select_confs import (
-    SelectConfs,
-)
-
 from mocked_ops import (
     MockedConfSelector,
     MockedExplorationReport,
     MockedSelectConfs,
+)
+
+from dpgen2.op.select_confs import (
+    SelectConfs,
 )
 
 

@@ -47,6 +47,7 @@ from dpgen2.utils.dflow_query import (
     print_keys_in_nice_format,
     sort_slice_ops,
 )
+
 # isort: off
 import utils.context
 from mocked_ops import (
@@ -56,6 +57,7 @@ from mocked_ops import (
     MockedStage,
     MockedStage1,
 )
+
 # isort: on
 
 dpgen_keys = [

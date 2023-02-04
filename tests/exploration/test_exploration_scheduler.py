@@ -40,6 +40,7 @@ from dpgen2.exploration.task import (
     ExplorationStage,
     ExplorationTaskGroup,
 )
+
 # isort: off
 import exploration.context
 from mocked_ops import (
@@ -49,6 +50,7 @@ from mocked_ops import (
     MockedStage,
     MockedStage1,
 )
+
 # isort: on
 
 

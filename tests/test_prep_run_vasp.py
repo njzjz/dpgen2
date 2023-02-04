@@ -50,6 +50,11 @@ from context import (
     skip_ut_with_dflow_reason,
     upload_python_packages,
 )
+from mocked_ops import (
+    MockedPrepVasp,
+    MockedRunVasp,
+    mocked_incar_template,
+)
 
 from dpgen2.constants import (
     fp_task_pattern,
@@ -64,12 +69,6 @@ from dpgen2.superop.prep_run_fp import (
     PrepRunFp,
 )
 from dpgen2.utils.step_config import normalize as normalize_step_dict
-
-from mocked_ops import (
-    MockedPrepVasp,
-    MockedRunVasp,
-    mocked_incar_template,
-)
 
 default_config = normalize_step_dict(
     {
