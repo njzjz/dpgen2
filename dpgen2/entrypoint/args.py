@@ -269,8 +269,8 @@ def input_args():
     doc_init_sys = "The inital data systems"
 
     return [
-        Argument("type_map", list[str], optional=False, doc=doc_type_map),
-        Argument("mass_map", list[float], optional=False, doc=doc_mass_map),
+        Argument("type_map", List[str], optional=False, doc=doc_type_map),
+        Argument("mass_map", List[float], optional=False, doc=doc_mass_map),
         Argument(
             "init_data_prefix",
             str,
@@ -284,7 +284,7 @@ def input_args():
         ),
         Argument(
             "init_data_sys",
-            [list[str], str],
+            [List[str], str],
             optional=False,
             default=None,
             doc=doc_init_sys,
@@ -486,7 +486,7 @@ def submit_args(default_step_config=normalize_step_dict({})):
             ),
             Argument(
                 "upload_python_packages",
-                [list[str], str],
+                [List[str], str],
                 optional=True,
                 default=None,
                 doc=doc_upload_python_packages,
