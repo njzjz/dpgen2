@@ -14,7 +14,7 @@ input_files = (
     p_examples / "almg" / "input.json",
     # p_examples / "almg" / "input-v005.json",
     # p_examples / "almg" / "dp_template.json",
-    p_examples / "calyspo" / "input.test.json",
+    p_examples / "calypso" / "input.test.json",
     p_examples / "water" / "input_distill.json",
     p_examples / "water" / "input_dpgen.json",
     p_examples / "water" / "input_multitask.json",
